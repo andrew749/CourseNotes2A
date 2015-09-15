@@ -1,0 +1,68 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{CS241}
+\author{Andrew Codispoti}
+
+\begin{document}
+\maketitle
+\section{Binary and Hexadecimal numbers}
+\begin{enumerate}
+  \item bit -- binary digits 1 and 0 (all computer understands)
+  \item byte -- 8 bits
+  \item word
+    \begin{enumerate}
+      \item machine specific grouping of bits
+      \item assume 32-bit architecture
+      \item 1 word = 32 bits= 4 bytes
+    \end{enumerate}
+
+  \item nibble -- 4 bits half a byte
+\end{enumerate}
+
+
+\subsection{Given a byte(or word) in memory what does it mean?}
+\par Could mean many things.
+\begin{enumerate}
+  \item A number (which number?)
+\end{enumerate}
+\subsection{How can we represent negative numbers?}
+\par Simply use a sign bit with 0 for + and 1 for - (Sign-Magnitude
+representation) but then you have two -1's and arithmetic is tricky
+\subsubsection{Two's Complement notation}
+\par Interpret the n-bit number as a an unsigned int. If first bit is 0 done else
+subtract $2^n$
+\par n bits- represent $-2^{n-1}$ \dots $2^{n-1}$ with left bit still giving
+sign. arithmetic is clean, just mod $2^n$
+\par We cant tell if a number is signed unsigned or two's complement and we
+have to remember.
+\par We don't even know if what it means:a number, a character, An
+instruction (or part of one), Garbage
+\subsection{Hexadecimal notation}
+\begin{enumerate}
+  \item base 16 0-9, A-F
+  \item more compact than binary
+  \item each hex digit = 4 bits (1 nibble)
+  \item e.g. 1100 1001  = C9
+  \item NOTATION: 0xC9
+\end{enumerate}
+
+\subsection{Mapping from binary to characters}
+\subsubsection {ASCII}
+\par Uses 7 bits
+\par IBM implemented extended ascii to use all 8-bits, but they add some weird
+characters i.e. frame like characters.Compatibility issues because no one
+standard.
+\par 11001001 is not 7 bit ascii, 01001001 decimal 73 is ASCII for I
+\par other standards like EBCDIC
+\section{Machine Language}
+\par Computer programs operate on data and are data(occupy same space as data)
+\subsection{Von Neumann architecture}
+\par Programs reside in the same memory as data.
+\par Programs can operate on other programs i.e OS
+\end{document}
