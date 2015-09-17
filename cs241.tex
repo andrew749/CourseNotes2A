@@ -5,7 +5,7 @@
 \usepackage{amssymb}
 \usepackage{epstopdf}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
-
+\usepackage[T1]{fontenc}
 \title{CS241}
 \author{Andrew Codispoti}
 
@@ -96,4 +96,91 @@ standard.
   \item 5 bits encode a register $2^5 = 32$
   \item 15 bits to encode registers, 17 bits to encode operation
 \end{enumerate}
+\subsection{RAM}
+\begin{enumerate}
+  \item large amount of memory away from cpu
+  \item travels between the cpu and ram on the bus
+  \item big array of n-bytes, n ~ $10^9$
+  \item each cell has an address 0,\dots, n-1
+  \item each 4-byte block of the form is a word(see diagram 2 in notes)
+  \item word addresses are 0,4,8,c,10,14,18,1c
+  \item RAM access much slower than reg access
+\end{enumerate}
+\subsection{Communicating with RAM}
+\par two commands
+\begin{enumerate}
+  \item load
+    \begin{enumerate}
+      \item transfer a word from an address to a register. desired address
+        goes into the memory address register(MAR), goes out on bus
+      \item data at that location comes back on the bus, goes into the memory
+        data register (MDR)
+      \item value in MDR moved to destination register
+    \end{enumerate}
+  \item store: does the reverse of load
+\end{enumerate}
+\subsection{How does a computer know which words contain instructions and which
+  contain data?}
+\par It Doesn't
+\subsection{How does it run}
+\par Special register called pc(program counter) which stores the address of
+the next instruction to execute
+instruction to execute.
+\par By convention, guarantee that some address(i.e. 0) contains code,
+initialize pc to 0.
+\par Computer then runs the fetch-execute cycle
+\begin{verbatim}
+  PC <- 0
+  loop
+  IR <- MEM[PC]
+  PC <- 4
+  decode and execute the instruction in IR
+  end loop
+\end{verbatim}
+\par only program the machine really runs
+\par \textbf{NOTE:}  PC holds the address of the next instruction while the
+current instruction is executing.
+\subsection{How does a program get executed}
+\par Program called a loader that puts the program in memory and sets PC to teh
+address of the first instruction in the program and sets PC to teh address of
+the first instruction in the program
+\subsection{What happens when a program ends?}
+\par need to return control to the loader, set pc to the address of the next
+instruction in the loader.\$31 will contain the right address.
+\par need to set pc to \$31
+\subsection{Example}
+\par Example1: Add value in \$5 to the value in the \$7 sotre result in \$3 and
+return
+\begin{tabular}{|c c c c|}
+  \hline
+  location & binary & hex & meaning\\
+  \hline
+  00000000 & 0000 0000 1010 0111 0001 1000 0010 0000 & 00a71820 & add \$3, \$5,
+  \$7 \\
+  \hline
+  00000004 & 0000 0011 1110 0000 0000 0000 0000 1000 & 03e00008 * jr \$31 \\
+  \hline
+\end{tabular}
+\par Example 2 add 42 to 52, store in \$3, return
+\par lis \$d  "load immediate and skip", treat the next word as an immediate
+value and load it in to \$d then skip to the instruction
+\begin{tabular}{|c c c c|}
+  \hline
+  location & binary & hex & meaning\\
+  \hline
+  00000000 & 0000 0000 0000 0000 0010 1000 0001 0100 & 00002814 & lis \$5\\
+  \hline
+  00000004 & 0000 0000 0000 0000 0000 0000 0010 1010 & 00000004 & .word 42 \\
+  \hline
+  00000008 & 0000 0000 0000 0011 1000 1000 0001 0100 & 00002814 & lis \$7\\
+  \hline
+  0000000c & 0000 0000 0000 0000 0000 0000 0011 0100 & 00000004 & .word 52 \\
+  \hline
+  00000004 & 0000 0011 1110 0000 0000 0000 0000 1000 & 03e00008 &$ jr \$31 \\
+  \hline
+\end{tabular}
+\begin{verbatim}
+  add \$3 \$5 \$7
+\end{verbatim}
+
 \end{document}
