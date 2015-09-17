@@ -83,10 +83,17 @@ standard.
   \item disk memory
   \item network memory
 \end{enumerate}
-\par On the CPU, small amout of very fast memory called registers
+\subsection{Registers}
+\par On the CPU, small amount of very fast memory called registers
 \par MIPS 32 General purpose registers \$0 to \$31
 \begin{enumerate}
   \item each holds 32 bits
   \item can only operate on data that is in regs.
+  \item \$0 is always 0
+  \item \$31 is special and \$30
+  \item EX: add the contents of two registers and put the result in another
+    register.
+  \item 5 bits encode a register $2^5 = 32$
+  \item 15 bits to encode registers, 17 bits to encode operation
 \end{enumerate}
 \end{document}
