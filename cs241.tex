@@ -150,7 +150,7 @@ instruction in the loader.\$31 will contain the right address.
 \par need to set pc to \$31
 \subsection{Example}
 \par Example1: Add value in \$5 to the value in the \$7 sotre result in \$3 and
-return
+return\\
 \begin{tabular}{|c c c c|}
   \hline
   location & binary & hex & meaning\\
@@ -163,7 +163,7 @@ return
 \end{tabular}
 \par Example 2 add 42 to 52, store in \$3, return
 \par lis \$d  "load immediate and skip", treat the next word as an immediate
-value and load it in to \$d then skip to the instruction
+value and load it in to \$d then skip to the instruction\\
 \begin{tabular}{|c c c c|}
   \hline
   location & binary & hex & meaning\\
@@ -176,11 +176,24 @@ value and load it in to \$d then skip to the instruction
   \hline
   0000000c & 0000 0000 0000 0000 0000 0000 0011 0100 & 00000004 & .word 52 \\
   \hline
-  00000004 & 0000 0011 1110 0000 0000 0000 0000 1000 & 03e00008 &$ jr \$31 \\
+  00000004 & 0000 0011 1110 0000 0000 0000 0000 1000 & 03e00008 & jr \$31 \\
   \hline
 \end{tabular}
 \begin{verbatim}
   add \$3 \$5 \$7
+\end{verbatim}
+\subsection{assembly language}
+\par replace tedious binary/hex encodings with easier to read mnuemonics
+less chance of error, translation to binary can be automated (assembler), one
+line of assembly = one machine instruction (word)
+\begin{verbatim}
+  lis $5; load imm and skip
+  .word 42; not an instruction, is a directive that next word in binary should
+  literally be 42
+  list $7;
+  .word 52
+  add $3 $5 $7;destination reg first
+  jr $31
 \end{verbatim}
 
 \end{document}

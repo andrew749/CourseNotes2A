@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 SEP 2015 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 SEP 2015 15:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -299,33 +299,43 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 132.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [3]
-(./cs241.aux) ) 
+)
+Overfull \hbox (3.49265pt too wide) in paragraph at lines 152--164
+[] 
+ []
+
+[3]
+Overfull \hbox (11.34831pt too wide) in paragraph at lines 197--197
+[]  \T1/cmtt/m/n/10.95 .word 42; not an instruction, is a directive that next w
+ord in binary should[] 
+ []
+
+[4] (./cs241.aux) ) 
 Here is how much of TeX's memory you used:
  3558 strings out of 493089
  45842 string characters out of 6134842
- 113928 words of memory out of 5000000
+ 113929 words of memory out of 5000000
  6832 multiletter control sequences out of 15000+600000
  15238 words of font info for 48 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 42i,5n,31p,385b,303s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-
-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on cs241.pdf (3 pages, 183207 bytes).
+ 42i,6n,31p,385b,303s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super
+/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1095
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1095.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on cs241.pdf (4 pages, 190223 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
