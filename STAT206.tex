@@ -1,10 +1,11 @@
 \documentclass[11pt]{amsart}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
 %\geometry{landscape}                % Activate for for rotated page geometry
 %\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{amsmath}
 \usepackage{epstopdf}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
@@ -13,8 +14,133 @@
 
 \begin{document}
 \maketitle
-\section{Descriptive and Inferential Statistics}
+\section{Descriptive and Inferential Statistics Terminology}
 \begin{enumerate}
+  \item Statistics: Science of conducting studies to collect, organize,
+    summarize, analyze and draw conclusions from data.
+  \item
+    variable:attribute can be diff values
+  \item Categorical variables(Gender), Quantitative variables (age weight)
+  \item Discrete var: values that can be counted
+  \item continuous var: assume all values between any two specific values,
+    measured
+  \item random: vals determined by chance
+  \item Data set:collection of data values
+  \item descriptive statistics: describe situation in data ( collect,
+    organize summarize, present data)
+  \item inferential statistics: make inference from samples to population
+  \item population:all indviduals under study
+  \item sample group selected
+  \item statistical hyp: claim
+  \item hypothesis testing: decision making process for evaluating a
+    claim about population from samples
 \end{enumerate}
-
-\end{document}  
+\par study samples of pop and use inferential stats to make inference
+about pop
+\subsection{Freq distribution and graphs}
+\par raw data in original form organized in some way  (i.e. freq
+distribution). can then be presented in graphs or charts
+\par freq. dist organizes raw data into classes and frequencies.
+\par range of data is large (lower class limit, upper class limit, class
+boundaries, class width, class midpoint, open-ended distribution)
+\subsection{General rules for grouped freq. dist.}
+\par 5-20 classes, class width should be odd to ensure midpoints are
+integers, mutually exclusive(non overlapping), continuos, exhaustive,
+equal in width
+\subsection{general procedure}
+\begin{enumerate}
+  \item determine classes
+    \begin{enumerate}
+      \item find highest(H) and lowest(L) values,
+      \item range = H - L
+      \item number(N) of classes desired
+      \item width =  R/N (round to whole)
+      \item lowest class limit, convenient value less than or equal to the
+        smallest data value.
+      \item add W to get lowr limit of next class
+      \item class boundaries
+    \end{enumerate}
+  \item tally data
+  \item find freq. of tallies
+  \item cumulative freq
+\end{enumerate}
+\subsection{Histogram}
+  \par histogram uses vertical bars to rep. freq of classes
+  \par different shapes bell shaped, uniform, j-shaped
+  reverse j-shaped, right and left skewed, bimodal, u-shaped
+\subsection{Stem and leaf plots}
+  \par uses part of data value as stem and part as leaf to form groups
+  \par more informative because shows values
+  \par first arrange data in order, separate into classes then plot
+  \par look for peaks and gaps, shape of distribution, variability by looking
+  at spread
+  \par can put back to back to compare with other data set
+\subsection{Descriptive Measures}
+  \par describe data with numerical measures
+  \par characteristic or measure form population is a parameter, from sample
+  data is called a statistic
+  \par Measures of central tendency(mean median, mode)
+  \textbf{don't round until done}
+  \subsubsection{Average}
+  \par sum divided by total
+  \begin{equation*}
+    \mu = \bar{X} = \frac{\sum{X}}{N}
+  \end{equation*}
+  \par rounding rule: final answer should be rounded to one or more decimal
+  place than original
+  \begin{equation}
+    \bar{X} = \frac{\sum{f \dot X_m}}{n}
+  \end{equation}
+  \subsubsection{Median}
+  \par ordered so called data array
+  \par half smaller half larger, position $\frac{n+1}{2}$
+  \par when even number of values, b/w two given data values
+  \subsubsection{Mode}
+  \par value that appears the most frequently
+  \par data set can have multiple or no modes
+  \subsubsection{properties of central tendency}
+ 	\begin{enumerate}
+	\item mean needs all values of data, varies less than media and mode, unique, cannot be computed for open-ended freq. distribution, highly affected by outliers
+	\item median find middle, whether data falls into upper or lower half of the distribution, can be calc for open data dist. less affected by outlier
+	\item most typical case req., easier to compute, can be computed for categorical or nominal data, not unique
+	\end{enumerate}
+	
+\section{Variation}
+\subsection{Measure of Variation}
+\par range is simple measure of variability
+\par \textbf{Variance} is measure of variability that uses all the data points, avg. deviation of values from mean.
+\par \textbf{population variance} $\sigma^2$ is avg. of squared deviations of values from population mean $\mu$
+\begin{equation}
+\sigma^2 = \frac{\sum{(X-\mu)^2}}{N}
+\end{equation}
+\par where N represents total no. of values in pop
+\par \textbf{sample variance} denoted by $s^2$ sum of squared deviations of the values from sample mean $\bar{X}$ divided by $(n-1)$
+\begin{equation}
+s^2 = \frac {\sum{(X-\bar{X})^2}}{n-1}
+\end{equation}
+\par where n is no. values in sample
+\par divided by n-1  b/c unbiased estimate of $\sigma^2$. standard deviation is square root of variance
+\textbf{poulation standard deviation}
+\begin{equation}
+\sigma  = \sqrt{\sigma^2} = \sqrt {\frac{\sum{(X-\bar{\mu})^2}}{n-1}}
+\end{equation}
+\par sample standard deviation
+\begin{equation}
+\begin{split}
+s  = \sqrt{s^2} = \sqrt {\frac{\sum{(X-\bar{X})^2}}{n-1}} \\
+s^2 = \frac{\sum{X^2 - \frac{(\sum X)^2}{n}}}{n-1} \\
+s^2 = \frac{\sum{f \dot X_m^2 - \frac{(\sum f \dot X_m)^2}{n}}}{n-1} \\
+\end{split}
+\end{equation}
+\subsection{Note}
+\begin{enumerate}
+\item value of $s^2$ always +
+\item sum of (X - $\bar{X}) is always 0
+\item larger value of s^2 or s, larger variability of data ( same with $\sigma$
+\end{enumerate}
+\section{Empirical(Normal) Rule}
+\par distro. bell shaped
+\par some \% of vals fall within 1 standard deviation of mean (X-nS, X+nS)
+\section{Chebyshev's Theorem}
+\par in an dist. regardl of shape, proportion of value that fall within k standard deviations will be at least $1-\frac{1}{k^2} where k > 1
+\end{document}
