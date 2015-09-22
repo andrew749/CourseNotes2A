@@ -7,6 +7,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{epstopdf}
+\usepackage{pgfplots}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
 \title{STAT206}
@@ -104,7 +105,7 @@ equal in width
 	\item median find middle, whether data falls into upper or lower half of the distribution, can be calc for open data dist. less affected by outlier
 	\item most typical case req., easier to compute, can be computed for categorical or nominal data, not unique
 	\end{enumerate}
-	
+
 \section{Variation}
 \subsection{Measure of Variation}
 \par range is simple measure of variability
@@ -142,7 +143,7 @@ s^2 = \frac{\sum{f \dot X_m^2 - \frac{(\sum f \dot X_m)^2}{n}}}{n-1} \\
 \par distro. bell shaped
 \par some \% of vals fall within 1 standard deviation of mean (X-nS, X+nS)
 \section{Chebyshev's Theorem}
-\par in an dist. regardl of shape, proportion of value that fall within k standard deviations will be at least $1-\frac{1}{k^2}$where $k > 1$
+\par in an dist\. regardl of shape, proportion of value that fall within k standard deviations will be at least $1-\frac{1}{k^2}$where $k > 1$
 \par subtract average from larger value, divide diff by standard deviation to get k, use cheb to get \%
 \section{Measure of Position}
 \par standard score / z-score subtract mean from observation and divide result by standard deviation $z = \frac {X - \bar{X}}{s}  or  \frac{X - \mu}{\sigma} $
@@ -157,4 +158,8 @@ s^2 = \frac{\sum{f \dot X_m^2 - \frac{(\sum f \dot X_m)^2}{n}}}{n-1} \\
 \begin{equation}
 Percentile = \frac{number of data value below X + 0.5}{n} * 100\%
 \end{equation}
+\section{Box-Plots}
+\par show distrivution of data
+\par helpful for finding outliers in the data based on the min and max relative
+the $Q_1$ and $Q_3$ measurements
 \end{document}
