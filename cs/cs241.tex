@@ -1,0 +1,231 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage[T1]{fontenc}
+\title{CS241}
+\author{Andrew Codispoti}
+
+\begin{document}
+\maketitle
+\section{Binary and Hexadecimal numbers}
+\begin{enumerate}
+  \item bit -- binary digits 1 and 0 (all computer understands)
+  \item byte -- 8 bits
+  \item word
+    \begin{enumerate}
+      \item machine specific grouping of bits
+      \item assume 32-bit architecture
+      \item 1 word = 32 bits= 4 bytes
+    \end{enumerate}
+
+  \item nibble -- 4 bits half a byte
+\end{enumerate}
+
+
+\subsection{Given a byte(or word) in memory what does it mean?}
+\par Could mean many things.
+\begin{enumerate}
+  \item A number (which number?)
+\end{enumerate}
+\subsection{How can we represent negative numbers?}
+\par Simply use a sign bit with 0 for + and 1 for - (Sign-Magnitude
+representation) but then you have two -1's and arithmetic is tricky
+\subsubsection{Two's Complement notation}
+\par Interpret the n-bit number as a an unsigned int. If first bit is 0 done else
+subtract $2^n$
+\par n bits- represent $-2^{n-1}$ \dots $2^{n-1}$ with left bit still giving
+sign. arithmetic is clean, just mod $2^n$
+\par We cant tell if a number is signed unsigned or two's complement and we
+have to remember.
+\par We don't even know if what it means:a number, a character, An
+instruction (or part of one), Garbage
+\subsection{Hexadecimal notation}
+\begin{enumerate}
+  \item base 16 0-9, A-F
+  \item more compact than binary
+  \item each hex digit = 4 bits (1 nibble)
+  \item e.g. 1100 1001  = C9
+  \item NOTATION: 0xC9
+\end{enumerate}
+
+\subsection{Mapping from binary to characters}
+\subsubsection {ASCII}
+\par Uses 7 bits
+\par IBM implemented extended ascii to use all 8-bits, but they add some weird
+characters i.e. frame like characters.Compatibility issues because no one
+standard.
+\par 11001001 is not 7 bit ascii, 01001001 decimal 73 is ASCII for I
+\par other standards like EBCDIC
+\section{Machine Language}
+\par Computer programs operate on data and are data(occupy same space as data)
+\subsection{Von Neumann architecture}
+\par Programs reside in the same memory as data.
+\par Programs can operate on other programs i.e OS
+\subsection{Central Processing Unit}
+\par see physical notes for diagram
+\begin{enumerate}
+  \item Control Unit
+    \begin{enumerate}
+      \item decodes instructions
+      \item dispatches to other parts of the computer to carry out instructions
+    \end{enumerate}
+  \item Arithmetic logic unit: Does Math
+\end{enumerate}
+\subsection{Memory--Many Kinds (Ranked in speed order)}
+\begin{enumerate}
+  \item **CPU
+  \item cache
+  \item **main memory RAM
+  \item disk memory
+  \item network memory
+\end{enumerate}
+\subsection{Registers}
+\par On the CPU, small amount of very fast memory called registers
+\par MIPS 32 General purpose registers \$0 to \$31
+\begin{enumerate}
+  \item each holds 32 bits
+  \item can only operate on data that is in regs.
+  \item \$0 is always 0
+  \item \$31 is special and \$30
+  \item EX: add the contents of two registers and put the result in another
+    register.
+  \item 5 bits encode a register $2^5 = 32$
+  \item 15 bits to encode registers, 17 bits to encode operation
+\end{enumerate}
+\subsection{RAM}
+\begin{enumerate}
+  \item large amount of memory away from cpu
+  \item travels between the cpu and ram on the bus
+  \item big array of n-bytes, n ~ $10^9$
+  \item each cell has an address 0,\dots, n-1
+  \item each 4-byte block of the form is a word(see diagram 2 in notes)
+  \item word addresses are 0,4,8,c,10,14,18,1c
+  \item RAM access much slower than reg access
+\end{enumerate}
+\subsection{Communicating with RAM}
+\par two commands
+\begin{enumerate}
+  \item load
+    \begin{enumerate}
+      \item transfer a word from an address to a register. desired address
+        goes into the memory address register(MAR), goes out on bus
+      \item data at that location comes back on the bus, goes into the memory
+        data register (MDR)
+      \item value in MDR moved to destination register
+    \end{enumerate}
+  \item store: does the reverse of load
+\end{enumerate}
+\subsection{How does a computer know which words contain instructions and which
+  contain data?}
+\par It Doesn't
+\subsection{How does it run}
+\par Special register called pc(program counter) which stores the address of
+the next instruction to execute
+instruction to execute.
+\par By convention, guarantee that some address(i.e. 0) contains code,
+initialize pc to 0.
+\par Computer then runs the fetch-execute cycle
+\begin{verbatim}
+  PC <- 0
+  loop
+  IR <- MEM[PC]
+  PC <- 4
+  decode and execute the instruction in IR
+  end loop
+\end{verbatim}
+\par only program the machine really runs
+\par \textbf{NOTE:}  PC holds the address of the next instruction while the
+current instruction is executing.
+\subsection{How does a program get executed}
+\par Program called a loader that puts the program in memory and sets PC to teh
+address of the first instruction in the program and sets PC to teh address of
+the first instruction in the program
+\subsection{What happens when a program ends?}
+\par need to return control to the loader, set pc to the address of the next
+instruction in the loader.\$31 will contain the right address.
+\par need to set pc to \$31
+\subsection{Example}
+\par Example1: Add value in \$5 to the value in the \$7 sotre result in \$3 and
+return\\
+\begin{tabular}{|c c c c|}
+  \hline
+  location & binary & hex & meaning\\
+  \hline
+  00000000 & 0000 0000 1010 0111 0001 1000 0010 0000 & 00a71820 & add \$3, \$5,
+  \$7 \\
+  \hline
+  00000004 & 0000 0011 1110 0000 0000 0000 0000 1000 & 03e00008 * jr \$31 \\
+  \hline
+\end{tabular}
+\par Example 2 add 42 to 52, store in \$3, return
+\par lis \$d  "load immediate and skip", treat the next word as an immediate
+value and load it in to \$d then skip to the instruction\\
+\begin{tabular}{|c c c c|}
+  \hline
+  location & binary & hex & meaning\\
+  \hline
+  00000000 & 0000 0000 0000 0000 0010 1000 0001 0100 & 00002814 & lis \$5\\
+  \hline
+  00000004 & 0000 0000 0000 0000 0000 0000 0010 1010 & 00000004 & .word 42 \\
+  \hline
+  00000008 & 0000 0000 0000 0011 1000 1000 0001 0100 & 00002814 & lis \$7\\
+  \hline
+  0000000c & 0000 0000 0000 0000 0000 0000 0011 0100 & 00000004 & .word 52 \\
+  \hline
+  00000004 & 0000 0011 1110 0000 0000 0000 0000 1000 & 03e00008 & jr \$31 \\
+  \hline
+\end{tabular}
+\begin{verbatim}
+  add \$3 \$5 \$7
+\end{verbatim}
+\subsection{assembly language}
+\par replace tedious binary/hex encodings with easier to read mnuemonics
+less chance of error, translation to binary can be automated (assembler), one
+line of assembly = one machine instruction (word)
+\begin{verbatim}
+  lis $5; load imm and skip
+  .word 42; not an instruction, is a directive that next word in binary should
+  literally be 42
+  list $7;
+  .word 52
+  add $3 $5 $7;destination reg first
+  jr $31
+\end{verbatim}
+\subsubsection{EX3}
+\par Compute the absolute value of \$1 store in \$1 and return
+\begin{enumerate}
+  \item some insturcitons modify PC =  "branches" and "jumps", i.e. jr
+  \item beq: branch if 2 registers have equal contents, increment PC by a given
+    number of words, can branch backwards.
+  \item lone bne
+  \item slt: "set less than"
+    \begin{verbatim}
+      slt $a, $b, $c
+      $a = {1 : $b<$c>, 0}
+    \end{verbatim}
+
+\end{enumerate}
+
+\subsubsection{RAM}
+\par lw= load word from ram into reg
+\begin{verbatim}
+  lw $a, i($b) loads the word at MEM[$b + i]into $a
+\end{verbatim}
+
+\par sw = store word from regs into RAM
+\begin{verbatim}
+  sw $a , i($b) stores word in $a at mem[$b+1]
+\end{verbatim}
+\par see examples on paper.
+\par mult =  multiply
+\begin{verbatim}
+  mult $a, $b ; Product of 2 32 bit numbers up to 64bitz, too big for register
+\end{verbatim}
+\par Concatenation of hi and lo registers is the entire product of
+multiplication
+
+\end{document}

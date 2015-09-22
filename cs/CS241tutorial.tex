@@ -1,0 +1,36 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}          
+\geometry{letterpaper}           
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{CS241 Tutorial}
+\author{Andrew Codispoti}
+
+\begin{document}
+\maketitle
+\section{STL}
+\subsection{containers}
+\begin{enumerate}
+    \item pair<T,U>: group two items
+    \item vector<T>: array like sequence of elements of type T
+    \item list<T>: linear sequence of elements of type T
+    \item map<T,U>: dictionary with keys of type T and values of type U
+    \item set<T>: collection of elements of type T with fast membership lookup
+\end{enumerate}
+\subsection{Algorithms}
+\begin{enumerate}
+    \item find: get iterator to element
+    \item count: count number of elements that compare equal
+    \item copy: copy elements of range to another range
+    \item for\_each: apply function to each element
+    \item transform: like map 
+    \item accumulate: adds all values in parameters plus an init
+\end{enumerate}
+
+
+
+\end{document}  
