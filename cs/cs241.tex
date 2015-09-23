@@ -221,11 +221,46 @@ line of assembly = one machine instruction (word)
   sw $a , i($b) stores word in $a at mem[$b+1]
 \end{verbatim}
 \par see examples on paper.
+\subsection{Multiplication}
 \par mult =  multiply
 \begin{verbatim}
   mult $a, $b ; Product of 2 32 bit numbers up to 64bitz, too big for register
 \end{verbatim}
 \par Concatenation of hi and lo registers is the entire product of
 multiplication
-
+\par mflo = move from lo
+\begin{verbatim}
+  mflo $a, ; $a <- lo
+\end{verbatim}
+\par for division lo stores quotient, and hi stores remainder
+\subsection{revisit looping example}
+\par have to keep track of offsets if instuctions are added or remove
+\subsection{Assembler}
+\par assembler allows labeled instrcutions
+\begin{verbatim}
+  foo: add $1, $2, $3
+\end{verbatim}
+\par assembler associates the name foo with the address of the instruction
+\par assembler calculates the distance between the label and the program
+counter, in words $\frac{top-PC}{4}$
+\section{Procedures in MIPS}
+\par 2 problems to solve
+\begin{enumerate}
+  \item call and return : transferring control into and out of the procedure (
+    Procedures calling other Procedures)
+  \item Registers: what if a proc overwrites my registers.
+\end{enumerate}
+\par We could : reserve some registers for f and some for main line so they
+wont interfere. but when using recursion we run out of registers.
+\par Instead guarantee that procs leave regs unchanged when done by storing in
+RAM. Must stop processes from using the same ram becuase the same issue will
+arise.
+\par see diagram
+\par Can allocate from one end of ram to the other for procs. Need to track what
+ram is in use. mips machine helps us \$30 initialized by the loader to just
+past the last word of memory.
+\par can use \$30 as a "bookmark" to separate used and unused RAM
+\par diagram
+\par RAM uses LIFO order \$30 is the stack pointer address at the top of the
+stack
 \end{document}
