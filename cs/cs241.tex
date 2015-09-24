@@ -257,10 +257,66 @@ RAM. Must stop processes from using the same ram becuase the same issue will
 arise.
 \par see diagram
 \par Can allocate from one end of ram to the other for procs. Need to track what
-ram is in use. mips machine helps us \$30 initialized by the loader to just
+ram is in use. Mips machine helps us \$30 initialized by the loader to just
 past the last word of memory.
 \par can use \$30 as a "bookmark" to separate used and unused RAM
 \par diagram
 \par RAM uses LIFO order \$30 is the stack pointer address at the top of the
 stack
+\subsection{Template for Procedures}
+\begin{verbatim}
+  f:  sw $2, -4($30) ;
+      sw $3, -8($30); push registers f modifies on the stack
+      lis $3
+      .word 8   ; decrement 30
+      sub $30, $30, $3
+      ; body
+
+  g:
+      add $30, $30, $3 ; assuming $3 remains 8 increment 30
+      lw $3, -8($30)
+      lw $2, -4($30)
+
+\end{verbatim}
+\subsection{Call and return}
+\begin{verbatim}
+  main: ...
+    lis $5
+    .word f; address of line labelled f
+    jr $5 ; jump to that line
+    ;(HERE)
+\end{verbatim}
+\par Return: we need to set PC to the line after the jr(i.e. to HERE)
+\par Solution: jalr
+\subsubsection{jalr(Jump and link regiter)}
+\par like jr, but sets \$31 to the address of the next instruction
+\begin{verbatim}
+  main: ...
+    lis $5
+    .word f; address of line labelled f
+    jalr $5 ; jump to that line
+\end{verbatim}
+\par  Question: jalr overwrites \$31 so how do we get back to the loader, what if f calls
+g
+\par Answer: Save \$31 to the stack before the call and restore afterwards
+
+\begin{verbatim}
+main:
+  lis $5
+  .word f
+  sw $31, -4($30)
+  lis $31
+  .word 4
+  sub $30, $30, $31
+  jalr $5
+  lis $31
+  .word 4
+  add $30, $30, $31
+  lw $31, -4($30)
+  jr $31
+\end{verbatim}
+
+\subsection{Parameters and Results}
+\par generally use regs (document)
+\par if too many, use stack
 \end{document}
