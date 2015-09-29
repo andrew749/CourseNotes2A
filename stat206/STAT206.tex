@@ -78,7 +78,7 @@ equal in width
   \par can put back to back to compare with other data set
 \subsection{Descriptive Measures}
   \par describe data with numerical measures
-  \par characteristic or measure form population is a parameter, from sample
+  \par characteristic or measure from population is a parameter, from sample
   data is called a statistic
   \par Measures of central tendency(mean median, mode)
   \textbf{don't round until done}
@@ -89,9 +89,11 @@ equal in width
   \end{equation*}
   \par rounding rule: final answer should be rounded to one or more decimal
   place than original
+  \par finding mean from grouped frequency distribution
   \begin{equation}
     \bar{X} = \frac{\sum{f \dot X_m}}{n}
   \end{equation}
+  \par f is frequency and $X_m$ are midpoints of class
   \subsubsection{Median}
   \par ordered so called data array
   \par half smaller half larger, position $\frac{n+1}{2}$
@@ -155,13 +157,39 @@ s^2 = \frac{\sum{f \dot X_m^2 - \frac{(\sum f \dot X_m)^2}{n}}}{n-1} \\
 \par 10 equal groups
 \subsubsection{quartiles}
 \par 4 equal groups
+\subsection{Percentile Equations}
+\par find the percentile of a piece of data
 \begin{equation}
 Percentile = \frac{number of data value below X + 0.5}{n} * 100\%
 \end{equation}
+\par find the position of a percentil
+\begin{equation}
+  c = \frac{n \dot p}{100}
+\end{equation}
+\par if c is not a whole number round to next whole number, and position is
+the number. if c is a whole number average c and c+1. this is position of
+X
 \section{Box-Plots}
 \par show distrivution of data
 \par helpful for finding outliers in the data based on the min and max relative
 the $Q_1$ and $Q_3$ measurements
+\par modified box plots dont show outliers
+\section{Product rule}
+\par total number of possibilities are $k_1 \dot k_2 \dot \dots k_n$
+\section{Permutation Rule}
+\par permutation: arrangement of n objects in specific order
+\par Rule 1: arrangement of n objects in specific order using r object of
+time, denoted by nPr:
+\begin{equation}
+  nP_r = \frac{n!}{(n-r)!}
+\end{equation}
+\par arrangment of n objects in specific order taking all n at a time is n!
+\section{Combination Rule}
+\par Combination: selection of objects with no order
+\par the selection of r objects out of n objects can be done in $nC_r$ ways
+\begin{equation}
+  \binom(n, r) = \frac{n!}{(n-r)!r!}
+\end{equation}
 \section{Combinatorics Ex}
 \begin{equation}
   n = \frac{8!}{5!*3!} \\
@@ -169,5 +197,20 @@ the $Q_1$ and $Q_3$ measurements
     = \frac{ \frac{6!}{3!3!}}{56} + \frac{\frac{6!}{5!}}{56} \\
     = \frac{13}{28} \\
 \end{equation}
-
+\section{Bayes Theorem}
+\begin{equation}
+\begin{aligned}
+  P(A \cap B) = P(A)\dot P(B|A)\\
+  P(A|B)=\frac{P(A \cap B)}{P(B)}\\
+  P(A|B)= \frac{P(Ai*P(D|Ai))}{P(Ai)P(D|Ai)+\dots+ P(Ak)P(D|Ak)}
+\end{aligned}
+\end{equation}
+\section{Probability Distributions}
+\begin{enumerate}
+  \item variable: characteristic  or attribute that can assume different
+values
+  \item Random Variable: variable whose value is determined by chance
+  \item have requirment that $\sum P(X) = 1$, $0 \leq P(X) \leq 1$
+  \item Expectation: $E(X) = \mu = \sum X \dot P(X)$
+\end{enumerate}
 \end{document}
