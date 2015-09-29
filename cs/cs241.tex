@@ -357,14 +357,14 @@ word will be printed
 \item NOTE: There are many more wrong tokens than right ones. try to find right
   combos
 \end {enumerate*}
-\subsubsection{Biggest problem with assembler}
+\subsection{Biggest problem with assembler}
 \par how do we assemble
 \begin{verbatim}
   beq $2, $0, abc
   abc:
 \end{verbatim}
 \par cant assemble the first beq because we dont know the value of abc
-\subsubsection{Standard solution}
+\subsection{Standard solution}
 \par assemble in two passes
 \par Pass 1: group tokens into instructions. record addresses of labelled
 instructions into a symbol table(list of [label, address] pairs)
@@ -375,4 +375,64 @@ refers to a label, lookup the associated address in the symbol table
 \par Your Assembler output the assembled mips code to stdout. output the symbol
 table to stderr
 \par marmoset only cares outupt ERROr
+\subsection{Code}
+\begin{verbatim}
+  main: lis $2
+  .word 13
+  add $3, $3, $0
+  top: add $3, $3, $2
+  lis $1
+  .word 1
+  sub $2, $2, $1
+  bne $2, $0, top
+  jr $31
+  end:
+\end{verbatim}
+\subsubsection{Pass 1}
+\par group tokens into instructions. build symbol table
+\begin {table}{|c c}
+  \hline
+  main &  0\\
+  top & c\\
+  end  & 24\\
+  \hline
+\end{table}
+\subsubsection{Pass 2}
+\par translate each instruction
+\begin{verbatim}
+  lis $2  ---- 0x00001014
+  .word 13 ---- 0x0000000d
+  bne $2, $0, top -- lookup top in symbol table
+  calculate (top-pc)/4 = -5 ==> 0x1440fffb
+\end{verbatim}
+\section{bit level operations}
+\par to assemble bne \$2, \$0, top (where (top - pc)/4  = -5)
+\begin{verbatim}
+  opcode = 000101 = 5
+  1st reg  = $2 = 00010
+  2nd reg = $0 = 00000
+  offset = -5
+  |6 bits (opcode) | 5 bits(1st reg) | 5 bits(2nd reg) | 16 bits (offset)
+\end{verbatim}
+\par to put 000101 into the first 6 bits append 26 0's (left shift by 26 bits)
+5 << 26\\
+
+\par move 2 21 bits to the left\\ 2 << 21
+\par move 0 16 bits to the left\\0 << 16
+\subsection{Bitwise and/or}
+\par normal AND/OR. \\and with 0 gives 0, with 1 gives other digit\\ or with 0
+gives other digit, 1 gives 1
+\par use bitwise and to turn bits off
+\par use bitwise or to turn bits on
+\par bitwise and with 0xffff, -5 & 0xffff bitwise and -5
+\par bitwise or the four pieces together \\
+(5 << 26) | (2 << 21) | (0 << 16) | (-5 & 0xffff)
+\subsection{C++ stuff}
+\par int converts to int ascii codeo
+\par char outputs the actual value and the screen interprets
+\begin{verbatim}
+  unsigned int instr = 5 << 26 |
+  char c = instr >> 24;
+  cout << c
+\end{verbatim}
 \end{document}
