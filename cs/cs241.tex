@@ -266,25 +266,25 @@ stack
 \subsection{Template for Procedures}
 \begin{verbatim}
   f:  sw $2, -4($30) ;
-      sw $3, -8($30); push registers f modifies on the stack
-      lis $3
-      .word 8   ; decrement 30
-      sub $30, $30, $3
-      ; body
+  sw $3, -8($30); push registers f modifies on the stack
+  lis $3
+  .word 8   ; decrement 30
+  sub $30, $30, $3
+  ; body
 
   g:
-      add $30, $30, $3 ; assuming $3 remains 8 increment 30
-      lw $3, -8($30)
-      lw $2, -4($30)
+  add $30, $30, $3 ; assuming $3 remains 8 increment 30
+  lw $3, -8($30)
+  lw $2, -4($30)
 
 \end{verbatim}
 \subsection{Call and return}
 \begin{verbatim}
   main: ...
-    lis $5
-    .word f; address of line labelled f
-    jr $5 ; jump to that line
-    ;(HERE)
+  lis $5
+  .word f; address of line labelled f
+  jr $5 ; jump to that line
+  ;(HERE)
 \end{verbatim}
 \par Return: we need to set PC to the line after the jr(i.e. to HERE)
 \par Solution: jalr
@@ -292,16 +292,16 @@ stack
 \par like jr, but sets \$31 to the address of the next instruction
 \begin{verbatim}
   main: ...
-    lis $5
-    .word f; address of line labelled f
-    jalr $5 ; jump to that line
+  lis $5
+  .word f; address of line labelled f
+  jalr $5 ; jump to that line
 \end{verbatim}
 \par  Question: jalr overwrites \$31 so how do we get back to the loader, what if f calls
 g
 \par Answer: Save \$31 to the stack before the call and restore afterwards
 
 \begin{verbatim}
-main:
+  main:
   lis $5
   .word f
   sw $31, -4($30)
@@ -431,8 +431,52 @@ gives other digit, 1 gives 1
 \par int converts to int ascii codeo
 \par char outputs the actual value and the screen interprets
 \begin{verbatim}
-  unsigned int instr = 5 << 26 |
+  unsigned int instr = 5 << 26 |...;
   char c = instr >> 24;
   cout << c
+  c = instr >> 16;
+  cout << c;
+  c = instr >> 8;
+  cout << c;
 \end{verbatim}
-\end{document}
+\section{Loaders}
+\par OS Code:
+\begin{verbatim}
+  repeat:
+  p <- next program to run
+  copy P into memory, starting at 0
+  jalr $0
+  beq $0, $0, repeat
+\end{verbatim}
+\section{OS}
+\par problem: os is a program - where does it sit in memory. other programs in
+memory at the same time,, all cant be at address 0
+\par labels may be resolved to the wrong addresses
+\subsection{how do you fix it}
+\par could pick different starting addresses for programs at assembly time
+\par let the loader decide where to put the program, fix bad label references
+\subsection{Loader's job}
+\begin{enumerate}
+  \item take a program P as input, find a location a in memory for P
+  \item copy P into mmeory starting at a
+  \item return a to the os
+\end{enumerate}
+\begin{verbatim}
+  OS 2.0
+  repeat: p <- next program
+  $3 <- loader(P)
+  jalr $3
+  beq $0, $0, repeat
+\end{verbatim}
+\section{Loader Pseudocode}
+\par Input: words $w_1 , \dots, w_n$ < - the code
+\par n = k + space for stack (how much? pick something)
+\par a = address of n contiguous words if free RAM
+\begin{verbatim}
+  for i-0..k-1
+  MEM[a+i*4] <- wi+1
+  $30 a+4*n
+  return a
+\end {verbatim}
+
+%\end{document}
