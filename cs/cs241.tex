@@ -3,8 +3,8 @@
 \geometry{letterpaper}
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{amsmath}
 \usepackage{epstopdf}
-\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 \usepackage[T1]{fontenc}
 \title{CS241}
 \author{Andrew Codispoti}
@@ -350,13 +350,13 @@ word will be printed
   \item Synthesis: output equivalent target string
 \end{enumerate}
 \par starts with assembly file: stream of characters
-\begin{enumerate*}
-\item group characters into meaningful tokens: label, hex #, reg #, .word, etc
-\item group tokens into instructions if posssible
-\item if tokens do not form sensible instructions, output ERROR to stderr
-\item NOTE: There are many more wrong tokens than right ones. try to find right
-  combos
-\end {enumerate*}
+\begin{enumerate}
+  \item group characters into meaningful tokens: label, hex \#, reg \#, .word, etc
+  \item group tokens into instructions if posssible
+  \item if tokens do not form sensible instructions, output ERROR to stderr
+  \item NOTE: There are many more wrong tokens than right ones. try to find right
+    combos
+\end{enumerate}
 \subsection{Biggest problem with assembler}
 \par how do we assemble
 \begin{verbatim}
@@ -390,13 +390,14 @@ table to stderr
 \end{verbatim}
 \subsubsection{Pass 1}
 \par group tokens into instructions. build symbol table
-\begin {table}{|c c}
+\begin {tabular}{|c c|}
   \hline
   main &  0\\
   top & c\\
   end  & 24\\
   \hline
-\end{table}
+\end{tabular}
+
 \subsubsection{Pass 2}
 \par translate each instruction
 \begin{verbatim}
@@ -424,9 +425,9 @@ table to stderr
 gives other digit, 1 gives 1
 \par use bitwise and to turn bits off
 \par use bitwise or to turn bits on
-\par bitwise and with 0xffff, -5 & 0xffff bitwise and -5
+\par bitwise and with 0xffff, -5 \& 0xffff bitwise and -5
 \par bitwise or the four pieces together \\
-(5 << 26) | (2 << 21) | (0 << 16) | (-5 & 0xffff)
+(5 << 26) | (2 << 21) | (0 << 16) | (-5 \& 0xffff)
 \subsection{C++ stuff}
 \par int converts to int ascii codeo
 \par char outputs the actual value and the screen interprets
@@ -449,10 +450,10 @@ gives other digit, 1 gives 1
   beq $0, $0, repeat
 \end{verbatim}
 \section{OS}
-\par problem: os is a program - where does it sit in memory. other programs in
-memory at the same time,, all cant be at address 0
+\par Problem: os is a program - where does it sit in memory. other programs in
+memory at the same time, all cant be at address 0.
 \par labels may be resolved to the wrong addresses
-\subsection{how do you fix it}
+\subsection{How do you fix it}
 \par could pick different starting addresses for programs at assembly time
 \par let the loader decide where to put the program, fix bad label references
 \subsection{Loader's job}
@@ -473,10 +474,12 @@ memory at the same time,, all cant be at address 0
 \par n = k + space for stack (how much? pick something)
 \par a = address of n contiguous words if free RAM
 \begin{verbatim}
+
   for i-0..k-1
   MEM[a+i*4] <- wi+1
   $30 a+4*n
   return a
-\end {verbatim}
 
-%\end{document}
+\end{verbatim}
+
+\end{document}
