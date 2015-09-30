@@ -91,7 +91,7 @@ equal in width
   place than original
   \par finding mean from grouped frequency distribution
   \begin{equation}
-    \bar{X} = \frac{\sum{f \dot X_m}}{n}
+    \bar{X} = \frac{\sum{f \cdot X_m}}{n}
   \end{equation}
   \par f is frequency and $X_m$ are midpoints of class
   \subsubsection{Median}
@@ -132,7 +132,7 @@ s^2 = \frac {\sum{(X-\bar{X})^2}}{n-1}
 \begin{split}
 s  = \sqrt{s^2} = \sqrt {\frac{\sum{(X-\bar{X})^2}}{n-1}} \\
 s^2 = \frac{\sum{X^2 - \frac{(\sum X)^2}{n}}}{n-1} \\
-s^2 = \frac{\sum{f \dot X_m^2 - \frac{(\sum f \dot X_m)^2}{n}}}{n-1} \\
+s^2 = \frac{\sum{f \cdot X_m^2 - \frac{(\sum f \dot X_m)^2}{n}}}{n-1} \\
 \end{split}
 \end{equation}
 \subsection{Note}
@@ -145,7 +145,7 @@ s^2 = \frac{\sum{f \dot X_m^2 - \frac{(\sum f \dot X_m)^2}{n}}}{n-1} \\
 \par distro. bell shaped
 \par some \% of vals fall within 1 standard deviation of mean (X-nS, X+nS)
 \section{Chebyshev's Theorem}
-\par in an dist\. regardl of shape, proportion of value that fall within k standard deviations will be at least $1-\frac{1}{k^2}$where $k > 1$
+\par in an dist regardl of shape, proportion of value that fall within k standard deviations will be at least $1-\frac{1}{k^2}$where $k > 1$
 \par subtract average from larger value, divide diff by standard deviation to get k, use cheb to get \%
 \section{Measure of Position}
 \par standard score / z-score subtract mean from observation and divide result by standard deviation $z = \frac {X - \bar{X}}{s}  or  \frac{X - \mu}{\sigma} $
@@ -164,7 +164,7 @@ Percentile = \frac{number of data value below X + 0.5}{n} * 100\%
 \end{equation}
 \par find the position of a percentil
 \begin{equation}
-  c = \frac{n \dot p}{100}
+  c = \frac{n \cdot p}{100}
 \end{equation}
 \par if c is not a whole number round to next whole number, and position is
 the number. if c is a whole number average c and c+1. this is position of
@@ -175,7 +175,7 @@ X
 the $Q_1$ and $Q_3$ measurements
 \par modified box plots dont show outliers
 \section{Product rule}
-\par total number of possibilities are $k_1 \dot k_2 \dot \dots k_n$
+\par total number of possibilities are $k_1 \cdot k_2 \cdot \dots k_n$
 \section{Permutation Rule}
 \par permutation: arrangement of n objects in specific order
 \par Rule 1: arrangement of n objects in specific order using r object of
@@ -200,7 +200,7 @@ time, denoted by nPr:
 \section{Bayes Theorem}
 \begin{equation}
 \begin{aligned}
-  P(A \cap B) = P(A)\dot P(B|A)\\
+  P(A \cap B) = P(A)\cdot P(B|A)\\
   P(A|B)=\frac{P(A \cap B)}{P(B)}\\
   P(A|B)= \frac{P(Ai*P(D|Ai))}{P(Ai)P(D|Ai)+\dots+ P(Ak)P(D|Ak)}
 \end{aligned}
@@ -211,6 +211,28 @@ time, denoted by nPr:
 values
   \item Random Variable: variable whose value is determined by chance
   \item have requirment that $\sum P(X) = 1$, $0 \leq P(X) \leq 1$
-  \item Expectation: $E(X) = \mu = \sum X \dot P(X)$
+  \item Expectation: $E(X) = \mu = \sum X \cdot P(X)$
 \end{enumerate}
+\section{The Binomial Distribution}
+\par: binomial experiment: probability experiment that satisfies:
+\begin{enumerate}
+  \item each trial can have only two outcomes or can be reduced to success or
+    failure
+  \item fixed \# of trials
+  \item outcomes independant of each other
+  \item probability of success must remain same for each trial
+\end{enumerate}
+\begin{align*}
+  Mean: \mu = \sum (X \cdot P(X))\\
+  Variance: \sigma^2 = \sum[X^2\cdot P(X)] -\mu^2\\
+  Standard Deviation: \sigma = \sqrt{\sigma^2}\\
+  Expectation: E(X) = \mu = \sum (X \cdot P(X))\\
+\end{align*}
+\section{Poisson distribution}
+\par discrete probability distribution that is useful in large numbe of trials
+with small success rate
+\begin{equation}
+  P(X;\lambda) = \frac{e^{-\lambda} \lambda^x}{X!} where X = 0,1,2
+\end{equation}
+\par where $\lambda = n \cdot p$ is the parameter of the poisson distribution
 \end{document}
