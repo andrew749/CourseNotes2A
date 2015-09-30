@@ -39,4 +39,26 @@
 \par convert problem 1 into a procedure  named fib  which expects \$1 to be n
 and put result in \$3. every register should have same value after program
 returns.
+\section{Tutorial 3}
+\subsection{symbol table}
+\begin{tabular}{|c c|}
+  \hline
+  name & value \\
+  \hline
+  begin & 0\\
+  label & 0\\
+  after & 8\\
+  abc0 & 0x10\\
+  abc1 & 0x10\\
+  loadstore &0x14\\
+  end & 0x1c\\
+  \hline
+\end{tabular}
+\subsection{error identification}
+\begin{enumerate}
+  \item repeat label names
+  \item no operant for .word
+  \item label does not exist
+  \item multiple operands
+\end{enumerate}
 \end{document}
