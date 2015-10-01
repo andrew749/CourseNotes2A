@@ -481,5 +481,71 @@ memory at the same time, all cant be at address 0.
   return a
 
 \end{verbatim}
-
+\subsection{What needs to change when we relocate?}
+\begin{enumerate}
+  \item offset added in order to  fix the askew entries. add alpha to word
+  \item dont adjust constant word values
+  \item do not adjust everythign else including branches
+\end{enumerate}
+\subsubsection{Problem}
+\par Assmbled file is a stream of bits, how do you know it came from .word(with
+an id!) and which are instructions
+\par We cant do this, and we need more info from the assembler
+\par output of most assemblers are not just machine code, it also produces
+object code
+Object file: contains binary code AND auxiliary info needed by the loader and
+linker
+\par we have our own object code format called MERL(Mips executable relocatable
+linkable)
+\subsubsection{What do we need to put in our object file}
+\begin{enumerate}
+  \item the code
+  \item which lines of code(addresses) were originally .word id
+\end{enumerate}
+\section{MERL format}
+\par start at 12 because header starts at 0 and it consists of 3 words
+\subsection{Want assembler to generate relocatable object code}
+\par Relocation Tool: cs241.merl ==> takes in MERL file and relocation address,
+outputs non relocatable mips file with header and footer removed ready to load
+at the given address
+\par mips.twoints/array: optional second argument = address at which to load
+the file
+\par E.g.: load myobj.merl at 0x10000
+\begin{verbatim}
+  java cs241.merl 0x10000 < myobj.merl > myobj.mips
+  java mips.twoints myobj.mips -x10000
+\end{verbatim}
+\par loader relocation algorithm
+\begin{verbatim}
+  read()//skip cookie
+  endMod <- read() -12 //length of code and footer
+  codeLen <- read() -12 //length of code
+  alpha <- findfreeRAM(codeLen+stack)
+  for(i=0; i<codeLen;i+=4>)
+    MEM[a+i] = read()
+  end for
+  while(i<endMod)
+  format <- read()
+    if(format == 1)
+      rel <- read()/address to be relocated
+      MEM[rel+alpha - 12]/*actual location in RAM (header not
+      loaded)*/+= alpha - 12    //adjust forward by alpha backward by header
+    length 12
+    else ERROR
+    i+=8
+  end while
+\end{verbatim}
+\section{Linkers}
+\par Issue: how can the assembler resolve a reference to the label in a
+different file
+\par soln1: cat the files, assemble the result
+\parsoln 2: tool that understands Merl files and puts them together
+intelligently - a linker
+\par what should the assembler do with references to labels that aren't there?
+\begin{enuemrate}
+\item need to change the assembler
+\item when the assembler encounters .word id where label id is not found, it
+  fills in 0 and indicates that the program requires the value of id before it
+  can run
+\end{enumerate}
 \end{document}
