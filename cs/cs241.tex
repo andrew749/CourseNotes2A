@@ -563,8 +563,7 @@ label definitions
 \par When the assemmbler encounters \verb|.word abc| if label abc: is not found
 and no .import abc, then error. Notifyins us of imported symbols MERL entry
 \par Format code 0x11 means External symbol reference(ESR)
-\subsection{What information must be recorded?
-}
+\subsection{What information must be recorded?}
 \begin{enumerate}
   \item Where, at what address is the symbol being used? (where is the 0 that
     we need to fill in )
@@ -585,8 +584,6 @@ and no .import abc, then error. Notifyins us of imported symbols MERL entry
 \par labels wil sometimes be duplicated
 \subsection{How can we make abc in b.asm unavailable}
 \par another assembler directive and MERL entry type
-\begin{verbatim}
-  .export abc  - make abc available for linking
 \end{verbatim}
 \par does not assumble to a word of mips, tells te assembler to make an entry
 in the MERL symbol table
@@ -600,5 +597,36 @@ in the MERL symbol table
   .     The name in ASCII, one word per char
   .
   word3+n
+\end{verbatim}
+\section{Linker Algorithm}
+\par Input: merl files m1 and m2
+\par Output: single merl file with m2 linked after m1
+\begin{verbatim}
+  a <- m1.codelen-12
+  relocate m2.code by \alpha
+  add \alpha to every address in m2.symtbl
+  if m1.exports.labels \cap m2.exports.labels != empty ==> ERROR
+  foreach <addr1,label> in m1.imports
+    if(\exists<addr2, label> in m2.exports)
+      m1.code[addr1] <- addr2
+      remove<addr1, label> from m1.imports
+      add addr1 to m1.relocates
+  foreach <addr2,label> in m1.imports
+    if(\exists<addr2, label> in m2.exports)
+      m1.code[addr2] <- addr1
+      remove<addr2, label> from m2.imports
+      add addr2 to m2.relocates
+
+  imports = m1.imports \cup m2.imports
+  exports = m1.exports \cup m2.exports
+  relocates = m1.relocates \cup m2.relocates
+
+  Output MERL cookie
+  output total code length + total symbol table length +12
+  output m1.code
+  output m2.code
+  output imports, epxorts, relocates
+
+
 \end{verbatim}
 \end{document}
