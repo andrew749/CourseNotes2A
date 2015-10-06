@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 SEP 2015 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 OCT 2015 10:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -226,28 +226,19 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaul       \par 
-l.11 \begin{document}
-                     
-? 
-./cs241.tex:11: Emergency stop.
-<inserted text> 
-                \par 
-l.11 \begin{document}
-                     
-End of file on the terminal!
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Try loading font information for U+msa on input line 12.
 
- 
-Here is how much of TeX's memory you used:
- 3166 strings out of 493089
- 40257 string characters out of 6134842
- 102599 words of memory out of 5000000
- 6481 multiletter control sequences out of 15000+600000
- 4709 words of font info for 16 fonts, out of 8000000 for 9000
- 1302 hyphenation exceptions out of 8191
- 42i,0n,28p,323b,43s stack positions out of 5000i,500n,10000p,200000b,80000s
-./cs241.tex:11:  ==> Fatal error occurred, no output PDF file produced!
-f-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 12.
@@ -330,37 +321,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 418--420
 
  []
 
-[8] [9] (./cs241.aux)
+[8] [9]
+Overfull \hbox (12.94191pt too wide) in paragraph at lines 508--511
+ \T1/cmr/m/n/10.95 10.1.\T1/cmr/bx/n/10.95 Want as-sem-bler to gen-er-ate re-lo
+-cat-able ob-ject code.[] \T1/cmr/m/n/10.95 Re-lo-ca-tion Tool: cs241.merl
+ []
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[10] [11] (./cs241.aux) ) 
 Here is how much of TeX's memory you used:
  3557 strings out of 493089
  45829 string characters out of 6134842
- 113852 words of memory out of 5000000
+ 113866 words of memory out of 5000000
  6831 multiletter control sequences out of 15000+600000
  15238 words of font info for 48 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  42i,6n,31p,323b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on cs241.pdf (9 pages, 224724 bytes).
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm
+-super/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfb
+x1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1
+095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm080
+0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0900.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on cs241.pdf (11 pages, 230567 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -459,7 +459,7 @@ memory at the same time, all cant be at address 0.
 \subsection{Loader's job}
 \begin{enumerate}
   \item take a program P as input, find a location a in memory for P
-  \item copy P into mmeory starting at a
+  \item copy P into memory starting at a
   \item return a to the os
 \end{enumerate}
 \begin{verbatim}
@@ -539,13 +539,66 @@ the file
 \par Issue: how can the assembler resolve a reference to the label in a
 different file
 \par soln1: cat the files, assemble the result
-\parsoln 2: tool that understands Merl files and puts them together
+\par soln 2: tool that understands Merl files and puts them together
 intelligently - a linker
 \par what should the assembler do with references to labels that aren't there?
-\begin{enuemrate}
+\begin{enumerate}
 \item need to change the assembler
 \item when the assembler encounters .word id where label id is not found, it
   fills in 0 and indicates that the program requires the value of id before it
   can run
 \end{enumerate}
+\subsection{How does the assembler notify us?}
+\par makes an entry in the MERL file
+\par we lose a valuable error check by having to look at different files for
+label definitions
+\subsection{How can the assembler knwo what is an error and what is
+  intentional?}
+\par Create a new assembler directive:
+\begin{verbatim}
+  .import id
+\end{verbatim}
+\par tells the assembler to ask for id to be linked in.
+\par Does NOT assemble to a work in MIPS
+\par When the assemmbler encounters \verb|.word abc| if label abc: is not found
+and no .import abc, then error. Notifyins us of imported symbols MERL entry
+\par Format code 0x11 means External symbol reference(ESR)
+\subsection{What information must be recorded?
+}
+\begin{enumerate}
+  \item Where, at what address is the symbol being used? (where is the 0 that
+    we need to fill in )
+  \item what is the name of the symbol
+\end{enumerate}
+\par Format of an ESR entry:
+\begin{verbatim}
+  word1 - 0x11
+  word2 location where the symbol is used
+  word3 length of the name in characters
+  word4
+  .
+  .       ASCII chars in the symbol's name (each char in its own word)
+  .
+  word 3+n
+\end{verbatim}
+\subsection{How can the linker know which abc to link to?}
+\par labels wil sometimes be duplicated
+\subsection{How can we make abc in b.asm unavailable}
+\par another assembler directive and MERL entry type
+\begin{verbatim}
+  .export abc  - make abc available for linking
+\end{verbatim}
+\par does not assumble to a word of mips, tells te assembler to make an entry
+in the MERL symbol table
+\subsubsection{Entry Type: External Symbol Definition(ESD)}
+\begin{verbatim}
+  word1 - 0x05 - formate code for ESD
+  word2 - address the symbol represents
+  word3 - length of the name in chars(n)
+  word4 -
+
+  .     The name in ASCII, one word per char
+  .
+  word3+n
+\end{verbatim}
 \end{document}
