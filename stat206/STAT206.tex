@@ -235,4 +235,35 @@ with small success rate
   P(X;\lambda) = \frac{e^{-\lambda} \lambda^x}{X!} where X = 0,1,2
 \end{equation}
 \par where $\lambda = n \cdot p$ is the parameter of the poisson distribution
+\begin{enumerate}
+\item Mean: $\mu = \lambda$
+\item Variance: $\sigma^2 = \lambda$
+\item Standard Deviation: $\sigma = \sqrt{\lambda}$
+\end{enumerate}
+\section{Poisson Process}
+\par events occur randomly in time and space
+\begin{enumerate}
+\item Independance: number of occurences in disjoint intervals are independant
+\item individuality: events occur singly P(two or more events occur simultaneously) = 0
+\item Homogeneity: events occur according to a uniform rate of intensity
+\end{enumerate}
+\par if events occur with average rate of $\lambda$ per unit of time, and X is num of events which occur in t units of time, the X ~ Poisson($\lambda\cdot t$)
+\begin{equation *}
+
+\begin{align}
+f(x)  = \frac{e^{-\lambda t}(\lambda t)^x}{x!}\\
+E(x) = \lambda t\\
+Var(x) = \lambda t
+\end{align}
+\end{equation *}
+\section{Geometric Distribution}
+\par Bernoulli trials completed until successful.
+\par let X be no of independant Bernoulli trials until the first success including first success then X follow geo dist. X~Geom(p)
+\begin{equation}
+\begin{align*}
+f(x) = p(1-p)^{x-1}, x = 1,2,\dots\\
+E(X) = \frac{1}{p}\\
+Var(X) = \frac{1-p}{p^2}
+\end{align*}
+\end{equation}
 \end{document}
