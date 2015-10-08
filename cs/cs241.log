@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 OCT 2015 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 OCT 2015 10:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -286,20 +286,83 @@ Overfull \hbox (12.94191pt too wide) in paragraph at lines 508--511
  \T1/cmr/m/n/10.95 10.1.\T1/cmr/bx/n/10.95 Want as-sem-bler to gen-er-ate re-lo-cat-able ob-ject code.[] \T1/cmr/m/n/10.95 Re-lo-ca-tion Tool: cs241.merl
  []
 
-[10] [11] [12] [13] (./cs241.aux) ) 
+[10] [11] [12]
+
+./cs241.tex:673: LaTeX Error: Environment enum undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.673 \begin{enum}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./cs241.tex:674: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.674 \item h
+             ave only finitely many words
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./cs241.tex:675: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.675 \item c
+             an recognize  word by comparing with each word in the finite set
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./cs241.tex:676: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.676 \item c
+             an we do this more efficiently?
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./cs241.tex:677: LaTeX Error: \begin{document} ended by \end{enum}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.677 \end{enum}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[13] [14] (./cs241.aux) ) 
 Here is how much of TeX's memory you used:
- 3557 strings out of 493089
- 45829 string characters out of 6134842
+ 3559 strings out of 493089
+ 45840 string characters out of 6134842
  113866 words of memory out of 5000000
- 6831 multiletter control sequences out of 15000+600000
+ 6833 multiletter control sequences out of 15000+600000
  15238 words of font info for 48 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  42i,6n,31p,323b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on cs241.pdf (13 pages, 243294 bytes).
+Output written on cs241.pdf (14 pages, 249268 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -645,6 +645,77 @@ principles applicable to programming language
   \item length of a word |w| : number of characters in the word  e.g. |aba|=3
   \item empty word: an empty sequence of symbols $\epsilon$ length of epsilon
     is 0, epsilon denotes empty string
-  \item
+  \item language: set of strings (words); i.e. ${a^{2n}b, n\ge 0}$ ==> words
+    consisting of an even number of a's followed by b
+  \item NOTE: $\epsilon$ - empty word {} or $\emptyset$- empty language;
+    ${\epsilon}$ - singleton language that contains only 2
 \end{enumerate}
+\subsection{How can we recognize automatically whether a given string
+belongs to a given language?}
+\par Depends on how complex the language is.  ${a^{2n}b, n\ge 0}$  is easy,
+{valid mips assembly programs easy}, {valid c programs, harder}, {some
+  languages} impossible
+\par Characteristize languages according to how hard the recognition process
+is.
+\par Organize languages into classes of languages based on how hard they are to
+recognize
+\begin{enumerate}
+  \item finite
+  \item regular
+  \item context-free
+  \item context-sensitive
+  \item recursive
+  \item etc.
+\end{enumerate}
+\par  languages get harder to recognize as you go down the list. start from
+easy to impossible
+\subsection{Finite Language}
+\begin{enum}
+\item have only finitely many words
+\item can recognize  word by comparing with each word in the finite set
+\item can we do this more efficiently?
+\end{enum}
+\subsubsection{Exercise}
+\par L = {cat, car, cow}.Write code to answer $w\in L$ such that w is scanned
+exactly once without storing previously seen characters.
+\begin{verbatim}
+  scan input left to right
+  if first char is c, move on, else error
+  if next char is a
+  __if next char is t
+  ____if no more chars, accept else error
+  __else if nex char is r
+  ____if no more chars, accept else error
+  __else error
+  else if next char is o
+  __if next char is w
+  ____if no more chars accept else error
+  __else error
+  else error
+  \end{verbatim}
+  \par An abstraction of this program
+  \par can generalize into state machine: bubbles are called states,
+  configurations of the program based on input seen
+  \par not very useful to use this because languages usually dont have finitely
+  many programs
+  \subsection{Regular Languages}
+  \par build from:
+  \begin{enumerate}
+    \item finite languages
+    \item union,$L_1 \cup L_2 = {x|x\in L_1, or  x\in L_2} $
+    \item concatenation $L_1 \cdot L_2 = {x,y|x\in L_1, y\in L_2}$
+    \item repetition L* = ${\epsilon}\cup {x \cdot y | x\in L*, y\in L }
+      = {\epsilon}\cup L \cup LL \cup LLL$ 0 or more occurences of words in L
+  \end{enumerate}
+  \subsubsection{Regular Expressions}
+  \par shorthand for reg. langs
+  \par see in physical notes
+  \subsubsection{Is C Regular}
+  \par A C progrma is a sequence of tokens, each of which comes from a regular
+  language $C\subset\{valid C tokens\}*$
+  \subsubsection{How can we recognize membership in a regular language?}
+  \par EG: $\{a^{2n}b, n\ge 0\} $ - can we harness what we learned about finite
+  languages? Allow loops in the diagram.
+  \par these machines called Deterministic Finite Automata(DFA's)
+
 \end{document}
