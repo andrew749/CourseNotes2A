@@ -214,7 +214,7 @@ values
   \item Expectation: $E(X) = \mu = \sum X \cdot P(X)$
 \end{enumerate}
 \section{The Binomial Distribution}
-\par: binomial experiment: probability experiment that satisfies:
+\par binomial experiment: probability experiment that satisfies:
 \begin{enumerate}
   \item each trial can have only two outcomes or can be reduced to success or
     failure
@@ -267,8 +267,8 @@ Var(X) = \frac{1-p}{p^2}
 \end{align*}
 \end{equation}
 \subsection{Memoryless Property of Geometric Random Variable}
-\par let X be a Geometric(p) R.V. and t1, t2 $\in$ R. then $P(X=t1+t2 |
-x=t1)=P(X>t2)$
+\par let X be a Geometric(p) R.V. and t1, t2 $\in$ R. then $P(X=t1+t2\ |
+\ x=t1)=P(X>t2)$
 \par buy a car and travel x kilometers. reliability does not depend on previous
 examples
 \begin{equation}
@@ -278,6 +278,50 @@ examples
 \par Let X be a R.V with E(X)  and  $Var(x) = \sigma^2 $ Then for any $\epsilon
 > 0 $ .
 \begin{equation}
-  P(|X-E(X)| \leq \epsilon ) \geq \frac{Var(x)}{\epsilon^2}
+  P(|X-E(X)| \ge \epsilon ) \le \frac{Var(x)}{\epsilon^2} \forall \epsilon >
+  0
 \end{equation}
+\begin{equation}
+  P(|X-E(X)< \epsilon) = 1-P(|X-E(X) \ge \epsilon) \ge
+  1-\frac{VAR(X)}{\epsilon^2}
+\end{equation}
+\par Let $\epsilon = k\sigma$,where $k \ge 0$, $\sigma > 0-st deviation$
+\begin{equation}
+  P(|X-E(X)|<k\sigma)\ge 1 - \frac{\sigma^2}{k^2\sigma^2}
+\end{equation}
+\begin{equation}
+  P(|X-E(X)|<k\sigma)\ge 1 - \frac{1} {k^2}
+\end{equation}
+\subsection{Example}
+\par The \# of students who miss a friday class is a Random varible X with mean
+15 and st. deviation 2. Find/estimate the probability.
+\begin{equation}
+  P(9 < x < 21) = P(-6 < x-15 < 6) = P(|X-15|\le 6) = 1 - \frac{1}{3^2}
+\end{equation}
+\subsection{Example 2}
+
+\begin{equation}
+  \begin{align}
+    X ~ Bin(5, 1/2) ; Find P(|X-E(X)| < 2 \sigma)\\
+    E[X] = n.p = 5 \cdot 1/2 = 2.5\\
+    Var[X] = np(1-p) = 5 \cdot 1/2 1/2 = 5/4  = 1.25\\
+    P(|X-2.5| < 2\cdot \sqrt{1.25}) \ge 1-1/4 = .75 \\
+    \end{align}
+\end{equation}
+\par actual probability
+\begin{align}
+\begin{equation}
+  P(|x-2.5|< 2\sqrt{1.25}>) = P(-2.236< x-2.5< 2.236)\\
+  P(.264 < X <4.37) = P(1\le x\le 4)= F(4)-F(0) = .9688 - .0313 = .9375
+\end{equation}
+\end{align}
+\section{Continuous Random variables and distributions}
+\begin{equation}
+  def: X:S \rightarrow  R  [a, b] \in R
+\end{equation}
+\par P.d.f probabiility density function
+\begin{enumerate}
+  \item $f(x) \ge-0$ for any x
+  \item $\int_{-\infty}^{\infty} f(x) dx = 1$
+\end{enumerate}
 \end{document}
