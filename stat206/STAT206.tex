@@ -316,12 +316,43 @@ examples
 \end{equation}
 \end{align}
 \section{Continuous Random variables and distributions}
+\par function from sample space to real numbers
 \begin{equation}
   def: X:S \rightarrow  R  [a, b] \in R
 \end{equation}
-\par P.d.f probabiility density function
+\par where R(X) is continuous and individual points in R must have 0
+probability
+\begin{enum}
+\item $P(X=x) = 0 for any x \in \Re$
+\item $P(a\leq X \leq b) = P(a < X < b)$
+\end{enum}
+\subsection P.d.f probabiility density function
+\par for random variable X, denoted f(x), assigns probability to $x\in \Re(X)$
 \begin{enumerate}
-  \item $f(x) \ge-0$ for any x
-  \item $\int_{-\infty}^{\infty} f(x) dx = 1$
+  \item $P(a<X<b) = \int_{a}^{b}f(x) dx, (a,b)\subseteq \Re(x)$
+  \item $f(x) \eq 0 , \forall x\in \Re(x)$
+  \item $\int_{\infty}^{\infty} f(x) dx = 1$
 \end{enumerate}
+\subsection{Cumulative distribution function(cdf)}
+\par cdf of continuous random variale X, denoted F(x) gives prob that X takes
+on value less than or equal to x.
+\begin{equation}
+  F(x) = P(X\leq x) = P(X<x)
+\end{equation}
+\subsubsection{Properties}
+\begin{enumerate}
+  \item $F(-\infty) = 0$
+  \item $F(\infty) = 1$
+  \item F(x) non decreasing
+\end{enumerate}
+\subsection{Relationship b/w pdf and cdf}
+
+\begin{equation}
+  \begin{aligned}
+    \int_{a}^{b}f(x) dx = P(a\lt X \lt b)\\
+    = P(X \lt b) - P(X \lt a)\\
+    = F(b) - F(a)
+  \end{aligned}
+\end{equation}
+\par fundamental theorem of calc $\frac{dF(x)}{dx} = f(x)$
 \end{document}
