@@ -194,7 +194,7 @@ time, denoted by nPr:
 \begin{equation}
   n = \frac{8!}{5!*3!} \\
     = \frac{5!*6*7*8}{1*2*3} \\
-    = \frac{ \frac{6!}{3!3!}}{56} + \frac{\frac{6!}{5!}}{56} \\
+    = \frac{\frac{6!}{3!3!}}{56} + \frac{\frac{6!}{5!}}{56} \\
     = \frac{13}{28} \\
 \end{equation}
 \section{Bayes Theorem}
@@ -355,4 +355,38 @@ on value less than or equal to x.
   \end{aligned}
 \end{equation}
 \par fundamental theorem of calc $\frac{dF(x)}{dx} = f(x)$
+\section{Continuous uniform distribution}
+  \par the probability of any subinterval of the range is proportional to the
+  length of the interval(two sub-interv. with same length must have same
+  probability)
+  \begin{equation}
+    \begin{aligned}
+      f(X) = \frac{1}{b-a}, a\le x\le b\\
+      F(x) =
+      \begin{array}{ll}
+        0 & x < a
+        \\
+        \frac{x-a}{b-a} & a\le x \le b\\
+        1 & b < x
+      \end{array}
+    \end{aligned}
+  \end{equation}
+  \subsection{Mean/expected value}
+  \begin{equation}
+    \begin{aligned}
+
+    $E(X)= \int_{x}xf(x)dx = \mu$\\
+    E[g(x)] = \int_{x}g(x)f(x)dx\\
+    E[aX+bY] = aE[x] +bE[y]
+  \end{aligned}
+
+  \end{equation}
+  \subsection{Variance}
+  \begin{equation}
+    \begin{aligned}
+      Var(X) = E[(X-E(X))^2]\\
+      Var [aX1+bX2] = a^2Var(X1)  + b^2Var(X2)
+  \end{aligned}
+  \end{equation}
+
 \end{document}
