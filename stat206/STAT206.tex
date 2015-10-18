@@ -388,5 +388,17 @@ on value less than or equal to x.
       Var [aX1+bX2] = a^2Var(X1)  + b^2Var(X2)
   \end{aligned}
   \end{equation}
+  \subsection{Exponential Distribution}
+  \par Events occur according to a Poisson process, measure the inter arrival
+  time s b/w events. If X is the amount of  time until next event in a posisson
+  process, $X~Exp(\theta)$ where $\theta = \frac{1}{\lambda}$
+  \begin{equation}
+    \begin{aligned}
+      f(x) = (1/\theta) e^{\-\frac{x}{\theta}}
+      F(x) = 1 - e^{-\frac{x}{\theta}}
+      E(x) = \theta
+      Var(X) = \theta^2
+    \end{aligned}
+  \end{equation}
 
 \end{document}

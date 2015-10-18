@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 OCT 2015 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 OCT 2015 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1128,7 +1128,152 @@ l.328 \end{enum}
 l.333   \item $f(x) \eq
                         0 , \forall x\in \Re(x)$
 ? 
-[8] (./STAT206.aux) ) 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.377 
+      
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.377 
+      
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.377 
+      
+? 
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.377 
+      
+? 
+! Missing { inserted.
+<inserted text> 
+                {
+l.377 
+      
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.377 
+      
+? 
+! Misplaced \cr.
+\math@cr@@@ ...&\kern -\alignsep@ }\fi \next@ \cr 
+                                                  
+l.378     $E(X)= \int_{x}xf(x)dx = \mu$\\
+                                         
+? 
+! Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.378     $E(X)= \int_{x}xf(x)dx = \mu$\\
+                                         
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.379     E[g(x)] = \int
+                        _{x}g(x)f(x)dx\\
+? 
+! Misplaced \cr.
+\math@cr@@@ ...&\kern -\alignsep@ }\fi \next@ \cr 
+                                                  
+l.379     E[g(x)] = \int_{x}g(x)f(x)dx\\
+                                        
+? 
+! Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.379     E[g(x)] = \int_{x}g(x)f(x)dx\\
+                                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.379     E[g(x)] = \int_{x}g(x)f(x)dx\\
+                                        
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.379     E[g(x)] = \int_{x}g(x)f(x)dx\\
+                                        
+? 
+! Misplaced \crcr.
+\endaligned ->\crcr 
+                    \egroup \restorecolumn@ \egroup 
+l.381   \end{aligned}
+                     
+? 
+! Extra }, or forgotten \endgroup.
+\endaligned ->\crcr \egroup 
+                            \restorecolumn@ \egroup 
+l.381   \end{aligned}
+                     
+? 
+! Extra }, or forgotten \endgroup.
+\endaligned ...cr \egroup \restorecolumn@ \egroup 
+                                                  
+l.381   \end{aligned}
+                     
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.382 
+      
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.382 
+      
+? 
+
+Overfull \hbox (129.56738pt too wide) detected at line 382
+[] []\OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 aX \OT1/cmr/m
+/n/10.95 + \OML/cmm/m/it/10.95 bY\OT1/cmr/m/n/10.95 ] = \OML/cmm/m/it/10.95 aE\
+OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ] + \OML/cmm/m/it/10
+.95 bE\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 ]
+ []
+
+[8]
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.383   \end{equation}
+                      
+? 
+! You can't use `\leqno' in vertical mode.
+\endmathdisplay@a ...\df@tag \@empty \else \veqno 
+                                                  \alt@tag \df@tag \fi \ifx ...
+l.383   \end{equation}
+                      
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.383   \end{equation}
+                      
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.383   \end{equation}
+                      
+? 
+[9] (./STAT206.aux) ) 
 Here is how much of TeX's memory you used:
  21972 strings out of 493089
  549637 string characters out of 6134842
@@ -1152,10 +1297,10 @@ cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b>
-Output written on STAT206.pdf (8 pages, 183559 bytes).
+Output written on STAT206.pdf (9 pages, 186872 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
