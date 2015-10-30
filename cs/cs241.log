@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 OCT 2015 11:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 OCT 2015 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -336,7 +336,10 @@ Type  H <return>  for immediate help.
                                                   
 l.673 \begin{enum}
                   
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -346,7 +349,9 @@ Type  H <return>  for immediate help.
                                                   
 l.674 \item h
              ave only finitely many words
-? 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -356,7 +361,9 @@ Type  H <return>  for immediate help.
                                                   
 l.675 \item c
              an recognize  word by comparing with each word in the finite set
-? 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -366,7 +373,9 @@ Type  H <return>  for immediate help.
                                                   
 l.676 \item c
              an we do this more efficiently?
-? 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 ! LaTeX Error: \begin{document} ended by \end{enum}.
 
@@ -376,7 +385,10 @@ Type  H <return>  for immediate help.
                                                   
 l.677 \end{enum}
                 
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 [13] [14] (./cs241.aux) ) 
 Here is how much of TeX's memory you used:
  3559 strings out of 493089
