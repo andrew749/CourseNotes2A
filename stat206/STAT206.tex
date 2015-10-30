@@ -458,4 +458,36 @@ process, $X~Exp(\theta)$ where $\theta = \frac{1}{\lambda}$
   \par improve approximation to sum or average of discrete random variables
   using normal random variable.
   \par go +- 0.5 for bar of width one as the integer value will be centered
+  \section{CI for $\mu$ when $\sigma $ known or n $\ge $30}
+  \textbf{point estimate} of a parameter is a specific numeric value.\\
+  \textbf{interval estimate} : interval or range of values used to estimate
+  the parameter
+  \begin{equation}
+    \bar X - z_{\alpha/2}(\frac{\sigma}{\sqrt{n}}) < \mu < \bar X +z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})
+  \end{equation}
+  point estimate +- maximum error
+  $z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
+  $z_{\alpha/2}$ critical value
+  $\alpha$ level of significance
+  \subsection{Confidence level}
+  \par probability that interval estimate will contain the parameter
+  \subsection{confidence interval}
+  \par specific interval estimate of a parameter determined by using data
+  obtained from sample and by usign specific confidence interval of
+  estimate.
+  \subsection{Sample size}
+  \par formula for minimum sample size needed for an interval estimate of
+  population mean. E is maximum error
+  \begin{equation}
+    n=(\frac{z_{\alpha/2} \cdot \sigma}{E})^2
+  \end{equation}
+  \section{CI for $\mu$ when $\sigma $ known or n < $30}
+  \begin{equation}
+    \bar X - t_{\alpha/2}(\frac{s}{\sqrt{n}}) < \mu < \bar X
+    +t_{\alpha/2}(\frac{s}{\sqrt{n}})
+  \end{equation}
+
+  t_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
+  \par where s is sample standard deviation and $t_{\alpha/2}$ are found in
+  t-table for n-1 degree of freedom
 \end{document}
