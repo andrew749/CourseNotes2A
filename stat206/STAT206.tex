@@ -410,127 +410,137 @@ process, $X~Exp(\theta)$ where $\theta = \frac{1}{\lambda}$
 \begin{equation}
   pdf = f(x) = \frac{1}{\sqrt{2*\pi\sigma^2}}e^{-1/2(\frac{x-\mu}{\sigma})^2}
 \end{equation}
-  \par mean and variance are parameters
-  \begin{enumerate}
-    \item linear combination of independantly normally distributed parameters
-      is normallydistributed.
-    \item $P(Z>z) = P(Z<-z) $because of symmetry
-    \item probabily density function for normally distributed randome variable
-      is not integrable for anyfinite limits a,b.
+\par mean and variance are parameters
+\begin{enumerate}
+  \item linear combination of independantly normally distributed parameters
+    is normallydistributed.
+  \item $P(Z>z) = P(Z<-z) $because of symmetry
+  \item probabily density function for normally distributed randome variable
+    is not integrable for anyfinite limits a,b.
 
-  \end{enumerate}
-  \begin{equation}
-    \begin{aligned}
-      E(X) = \mu\\
-      Var(X) = \sigma^2
-    \end{aligned}
-  \end{equation}
+\end{enumerate}
+\begin{equation}
+  \begin{aligned}
+    E(X) = \mu\\
+    Var(X) = \sigma^2
+  \end{aligned}
+\end{equation}
 
-  \subsection{Central Limit Theorem}
-  \par use normal distrubtion to approximate probabilities for non-normal
-  distributions
-  \par independant random variables:have no influence on one another's values
-  \begin{equation}
-    f(x,y) = P(X=x \cap Y=y) = P(X = x)P(Y=y) = f_x(x) f_y(y)
-  \end{equation}
-  \subsubsection{Sum}
-  \par let $X_a, X_2, \dots, X_n$ be independant random variables with same
-  distribution $E(X_i) = \mu$ and $Var(X_i) = \sigma^2$
-  \begin{equation}
-    as n\rightarrow \infty,
-    f \Sigma_iX_i approaches cdf for N(n\mu, n\sigma^2)
-  \end{equation}
-  \begin{equation}
-    cdf of \frac{\Sigma_iX_i-n\mu}{\sigma\sqrt{n}} \rightarrow(0,1)
-  \end{equation}
-  \subsubsection{Average}
-  \par let $X_1, \dots, X_n$ be independant random variables, with same
-  distribution $E(X_i) = \mu$ and $Var(X_i) = \sigma^2$
-  \par as $n\rightarrow\infty$ cdf of random variable $X\bar = \Sigma_iX_i/n$
-  approaches cdf $N(\mu, \frac{\sigma^2}{n})$
-  \par cdf of randome var $\frac{X\bar - \mu}{\frac{\sigma}{\sqrt{n}}}$
-  approaches cdffor N(0,1)
-  \begin{enum}
-  \item use it when n is large but finite.
-  \item usually need n $\ge $30
-  \item works for any variables unless $\mu or \sigma^2$ do not exist
-  \end{enum}
-  \subsubsection{Continuity Correction}
-  \par improve approximation to sum or average of discrete random variables
-  using normal random variable.
-  \par go +- 0.5 for bar of width one as the integer value will be centered
-  \section{CI for $\mu$ when $\sigma $ known or n $\ge $30}
-  \textbf{point estimate} of a parameter is a specific numeric value.\\
-  \textbf{interval estimate} : interval or range of values used to estimate
-  the parameter
-  \begin{equation}
-    \bar X - z_{\alpha/2}(\frac{\sigma}{\sqrt{n}}) < \mu < \bar X +z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})
-  \end{equation}
-  point estimate +- maximum error
-  $z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
-  $z_{\alpha/2}$ critical value
-  $\alpha$ level of significance
-  \subsection{Confidence level}
-  \par probability that interval estimate will contain the parameter
-  \subsection{confidence interval}
-  \par specific interval estimate of a parameter determined by using data
-  obtained from sample and by usign specific confidence interval of
-  estimate.
-  \subsection{Sample size}
-  \par formula for minimum sample size needed for an interval estimate of
-  population mean. E is maximum error
-  \begin{equation}
-    n=(\frac{z_{\alpha/2} \cdot \sigma}{E})^2
-  \end{equation}
-  \section{CI for $\mu$ when $\sigma $ known or n < 30}
-  \begin{equation}
-    \bar X - t_{\alpha/2}(\frac{s}{\sqrt{n}}) < \mu < \bar X
-    +t_{\alpha/2}(\frac{s}{\sqrt{n}})
-  \end{equation}
-  $t_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
-  \par where s is sample standard deviation and $t_{\alpha/2}$ are found in
-  t-table for n-1 degree of freedom
-  \section{CI and sample size for proportions}
-  \begin{enumerate}
-    \item p = population proportion
-    \item \^{p} = sample proportion or $\^{p}= \frac{X}{n}$ x is # of sample
-      units wiht characteristic n sample size
-  \end{enumerate}
-  \subsection{sample size for proportions}
-  formula for minumum sample size needed for interval estimate of population
-  is
-  \begin{equation}
-    n = \^{p}\^{q}(\frac{z_{\alpha/2}}{E}) , E is maximum error forproportion
-  \end{equation}
-  \section{Maximum likelihood estimator}
-  \par find derivative of the multipliction of the equatino for all
-  xi's; when multiple unknown parameters, take partial derivatives and
-  solve for unknown.
-  \section{Independant small samples}
-  \par pooled estimator
-  \begin{equation}
-    S_p^2 = \frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1+n_2-2}
-  \end{equation}
-  \begin{equation}
-    dof = n1+n2-2
-  \end{equation}
-  \section{Difference of means--Not Independant}
-  \begin{equation}
-    \begin{align}
-      d_i= x_i - y_i\\
-      \frac{\bar{D}\\mu_D}{\frac{S_D}{\sqrt{n}}}~t_{n-1}\\
-      S_D^2=\frace{\sum_{i=1}^n (D_i-\bar{D})^2}{n-1}
-    \end{align}
-  \end{equation}
-  \section{Hypthesis Testing}
-  \begin{enumerate}
-    \item Specify single default hypothesis and check whether the data is
-  unlikely under the hypothesis. Also called null hypothesis because it means
-  a new treatment has no effect.H0
-\item Alternative hypothesis. H0 is not true.
-\item Test Statistic (discrepancy measure): some funciton fo data that is
-  constructed to measure degree of agreement between the data and null
-  hypothesis.
-  \end{enumerate}
+\subsection{Central Limit Theorem}
+\par use normal distrubtion to approximate probabilities for non-normal
+distributions
+\par independant random variables:have no influence on one another's values
+\begin{equation}
+  f(x,y) = P(X=x \cap Y=y) = P(X = x)P(Y=y) = f_x(x) f_y(y)
+\end{equation}
+\subsubsection{Sum}
+\par let $X_a, X_2, \dots, X_n$ be independant random variables with same
+distribution $E(X_i) = \mu$ and $Var(X_i) = \sigma^2$
+\begin{equation}
+  as n\rightarrow \infty,
+  f \Sigma_iX_i approaches cdf for N(n\mu, n\sigma^2)
+\end{equation}
+\begin{equation}
+  cdf of \frac{\Sigma_iX_i-n\mu}{\sigma\sqrt{n}} \rightarrow(0,1)
+\end{equation}
+\subsubsection{Average}
+\par let $X_1, \dots, X_n$ be independant random variables, with same
+distribution $E(X_i) = \mu$ and $Var(X_i) = \sigma^2$
+\par as $n\rightarrow\infty$ cdf of random variable $X\bar = \Sigma_iX_i/n$
+approaches cdf $N(\mu, \frac{\sigma^2}{n})$
+\par cdf of randome var $\frac{X\bar - \mu}{\frac{\sigma}{\sqrt{n}}}$
+approaches cdffor N(0,1)
+\begin{enum}
+\item use it when n is large but finite.
+\item usually need n $\ge $30
+\item works for any variables unless $\mu or \sigma^2$ do not exist
+\end{enum}
+\subsubsection{Continuity Correction}
+\par improve approximation to sum or average of discrete random variables
+using normal random variable.
+\par go +- 0.5 for bar of width one as the integer value will be centered
+\section{CI for $\mu$ when $\sigma $ known or n $\ge $30}
+\textbf{point estimate} of a parameter is a specific numeric value.\\
+\textbf{interval estimate} : interval or range of values used to estimate
+the parameter
+\begin{equation}
+  \bar X - z_{\alpha/2}(\frac{\sigma}{\sqrt{n}}) < \mu < \bar X +z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})
+\end{equation}
+point estimate +- maximum error
+$z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
+$z_{\alpha/2}$ critical value
+$\alpha$ level of significance
+\subsection{Confidence level}
+\par probability that interval estimate will contain the parameter
+\subsection{confidence interval}
+\par specific interval estimate of a parameter determined by using data
+obtained from sample and by usign specific confidence interval of
+estimate.
+\subsection{Sample size}
+\par formula for minimum sample size needed for an interval estimate of
+population mean. E is maximum error
+\begin{equation}
+  n=(\frac{z_{\alpha/2} \cdot \sigma}{E})^2
+\end{equation}
+\section{CI for $\mu$ when $\sigma $ known or n < 30}
+\begin{equation}
+  \bar X - t_{\alpha/2}(\frac{s}{\sqrt{n}}) < \mu < \bar X
+  +t_{\alpha/2}(\frac{s}{\sqrt{n}})
+\end{equation}
+$t_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
+\par where s is sample standard deviation and $t_{\alpha/2}$ are found in
+t-table for n-1 degree of freedom
+\section{CI and sample size for proportions}
+\begin{enumerate}
+  \item p = population proportion
+  \item \^{p} = sample proportion or $\^{p}= \frac{X}{n}$ x is # of sample
+    units wiht characteristic n sample size
+\end{enumerate}
+\subsection{sample size for proportions}
+formula for minumum sample size needed for interval estimate of population
+is
+\begin{equation}
+  n = \^{p}\^{q}(\frac{z_{\alpha/2}}{E}) , E is maximum error forproportion
+\end{equation}
+\section{Maximum likelihood estimator}
+\par find derivative of the multipliction of the equatino for all
+xi's; when multiple unknown parameters, take partial derivatives and
+solve for unknown.
+\section{Independant small samples}
+\par pooled estimator
+\begin{equation}
+  S_p^2 = \frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1+n_2-2}
+\end{equation}
+\begin{equation}
+  dof = n1+n2-2
+\end{equation}
+\section{Difference of means--Not Independant}
+\begin{equation}
+  \begin{align}
+    d_i= x_i - y_i\\
+    \frac{\bar{D}\\mu_D}{\frac{S_D}{\sqrt{n}}}~t_{n-1}\\
+    S_D^2=\frace{\sum_{i=1}^n (D_i-\bar{D})^2}{n-1}
+  \end{align}
+\end{equation}
+\section{Hypthesis Testing}
+\begin{enumerate}
+  \item Specify single default hypothesis and check whether the data is
+    unlikely under the hypothesis. Also called null hypothesis because it means
+    a new treatment has no effect.H0
+  \item Alternative hypothesis. H0 is not true.
+  \item Test Statistic (discrepancy measure): some funciton fo data that is
+    constructed to measure degree of agreement between the data and null
+    hypothesis.
+\end{enumerate}
+\subsection{Types of Error}
+\par TYPE 1 ERROR: reject H0 when it is true.
+\par TYPE 2 ERROR: do not reject H0 when it is false.
+\subsection{Notation}
+\begin{equation}
+  \begin{align}
+    P(Type 1 Error) = \alpha (significance level)\\
+    P(Type 2 Error) = 1 - \beta (P is the power of the test)
+  \end{align}
+\end{equation}
 
 \end{document}
