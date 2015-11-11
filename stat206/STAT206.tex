@@ -6,9 +6,6 @@
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
-\usepackage{epstopdf}
-\usepackage{pgfplots}
-\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
 \title{STAT206}
 \author{Andrew Codispoti}
@@ -39,12 +36,12 @@
 \par study samples of pop and use inferential stats to make inference
 about pop
 \subsection{Freq distribution and graphs}
-\par raw data in original form organized in some way  (i.e. freq
+\par raw data in original form organized in some way  (i.e.\ freq
 distribution). can then be presented in graphs or charts
-\par freq. dist organizes raw data into classes and frequencies.
+\par freq.\ dist organizes raw data into classes and frequencies.
 \par range of data is large (lower class limit, upper class limit, class
 boundaries, class width, class midpoint, open-ended distribution)
-\subsection{General rules for grouped freq. dist.}
+\subsection{General rules for grouped freq.\ dist.}
 \par 5-20 classes, class width should be odd to ensure midpoints are
 integers, mutually exclusive(non overlapping), continuos, exhaustive,
 equal in width
@@ -62,11 +59,11 @@ equal in width
       \item class boundaries
     \end{enumerate}
   \item tally data
-  \item find freq. of tallies
+  \item find freq.\ of tallies
   \item cumulative freq
 \end{enumerate}
 \subsection{Histogram}
-\par histogram uses vertical bars to rep. freq of classes
+\par histogram uses vertical bars to rep.\ freq of classes
 \par different shapes bell shaped, uniform, j-shaped
 reverse j-shaped, right and left skewed, bimodal, u-shaped
 \subsection{Stem and leaf plots}
@@ -103,25 +100,28 @@ place than original
 \par data set can have multiple or no modes
 \subsubsection{properties of central tendency}
 \begin{enumerate}
-  \item mean needs all values of data, varies less than media and mode, unique, cannot be computed for open-ended freq. distribution, highly affected by outliers
-  \item median find middle, whether data falls into upper or lower half of the distribution, can be calc for open data dist. less affected by outlier
+  \item mean needs all values of data, varies less than media and mode, unique,
+    cannot be computed for open-ended freq.\ distribution, highly affected by outliers
+  \item median find middle, whether data falls into upper or lower half of the
+    distribution, can be calc for open data dist.\ less affected by outlier
   \item most typical case req., easier to compute, can be computed for categorical or nominal data, not unique
 \end{enumerate}
 
 \section{Variation}
 \subsection{Measure of Variation}
 \par range is simple measure of variability
-\par \textbf{Variance} is measure of variability that uses all the data points, avg. deviation of values from mean.
-\par \textbf{population variance} $\sigma^2$ is avg. of squared deviations of values from population mean $\mu$
+\par \textbf{Variance} is measure of variability that uses all the data points,
+avg.\ deviation of values from mean.
+\par \textbf{population variance} $\sigma^2$ is avg.\ of squared deviations of values from population mean $\mu$
 \begin{equation}
   \sigma^2 = \frac{\sum{(X-\mu)^2}}{N}
 \end{equation}
-\par where N represents total no. of values in pop
+\par where N represents total no.\ of values in pop
 \par \textbf{sample variance} denoted by $s^2$ sum of squared deviations of the values from sample mean $\bar{X}$ divided by $(n-1)$
 \begin{equation}
   s^2 = \frac {\sum{(X-\bar{X})^2}}{n-1}
 \end{equation}
-\par where n is no. values in sample
+\par where n is no.\ values in sample
 \par divided by n-1  b/c unbiased estimate of $\sigma^2$. standard deviation is square root of variance
 \textbf{poulation standard deviation}
 \begin{equation}
@@ -142,7 +142,7 @@ place than original
   \item larger value of $s^2$ or s, larger variability of data ( same with $\sigma$ )
 \end{enumerate}
 \section{Empirical(Normal) Rule}
-\par distro. bell shaped
+\par distro.\ bell shaped
 \par some \% of vals fall within 1 standard deviation of mean (X-nS, X+nS)
 \section{Chebyshev's Theorem}
 \par in an dist regardl of shape, proportion of value that fall within k standard deviations will be at least $1-\frac{1}{k^2}$where $k > 1$
@@ -167,7 +167,7 @@ place than original
   c = \frac{n \cdot p}{100}
 \end{equation}
 \par if c is not a whole number round to next whole number, and position is
-the number. if c is a whole number average c and c+1. this is position of
+the number.\ if c is a whole number average c and c+1. this is position of
 X
 \section{Box-Plots}
 \par show distrivution of data
@@ -247,7 +247,8 @@ with small success rate
   \item individuality: events occur singly P(two or more events occur simultaneously) = 0
   \item Homogeneity: events occur according to a uniform rate of intensity
 \end{enumerate}
-\par if events occur with average rate of $\lambda$ per unit of time, and X is num of events which occur in t units of time, the X ~ Poisson($\lambda\cdot t$)
+\par if events occur with average rate of $\lambda$ per unit of time, and X is
+num of events which occur in t units of time, the X~Poisson($\lambda\cdot t$)
 \begin{equation *}
 
   \begin{align}
@@ -269,14 +270,14 @@ with small success rate
 \subsection{Memoryless Property of Geometric Random Variable}
 \par let X be a Geometric(p) R.V. and t1, t2 $\in$ R. then $P(X=t1+t2\ |
 \ x=t1)=P(X>t2)$
-\par buy a car and travel x kilometers. reliability does not depend on previous
+\par buy a car and travel x kilometers.\ reliability does not depend on previous
 examples
 \begin{equation}
   LS = \frac{P( X \geq t_1 +t_2 and x \ge t_1)}{P(X \ge t1)}
 \end{equation}
 \section{Chebyshev's Theorem}
 \par Let X be a R.V with E(X)  and  $Var(x) = \sigma^2 $ Then for any $\epsilon
-> 0 $ .
+> 0 $
 \begin{equation}
   P(|X-E(X)| \ge \epsilon ) \le \frac{Var(x)}{\epsilon^2} \forall \epsilon >
   0
@@ -294,7 +295,7 @@ examples
 \end{equation}
 \subsection{Example}
 \par The \# of students who miss a friday class is a Random varible X with mean
-15 and st. deviation 2. Find/estimate the probability.
+15 and st.\ deviation 2. Find/estimate the probability.
 \begin{equation}
   P(9 < x < 21) = P(-6 < x-15 < 6) = P(|X-15|\le 6) = 1 - \frac{1}{3^2}
 \end{equation}
@@ -302,17 +303,17 @@ examples
 
 \begin{equation}
   \begin{align}
-    X ~ Bin(5, 1/2) ; Find P(|X-E(X)| < 2 \sigma)\\
+    X~Bin(5, 1/2) ; Find P(|X-E(X)| < 2 \sigma)\\
     E[X] = n.p = 5 \cdot 1/2 = 2.5\\
     Var[X] = np(1-p) = 5 \cdot 1/2 1/2 = 5/4  = 1.25\\
-    P(|X-2.5| < 2\cdot \sqrt{1.25}) \ge 1-1/4 = .75 \\
+    P(|X-2.5| < 2\cdot \sqrt{1.25}) \ge 1-1/4 = 0.75 \\
   \end{align}
 \end{equation}
 \par actual probability
 \begin{align}
   \begin{equation}
     P(|x-2.5|< 2\sqrt{1.25}>) = P(-2.236< x-2.5< 2.236)\\
-    P(.264 < X <4.37) = P(1\le x\le 4)= F(4)-F(0) = .9688 - .0313 = .9375
+    P(0.264 < X <4.37) = P(1\le x\le 4)= F(4)-F(0) = 0.9688 - 0.0313 = 0.9375
   \end{equation}
 \end{align}
 \section{Continuous Random variables and distributions}
@@ -357,7 +358,7 @@ on value less than or equal to x.
 \par fundamental theorem of calc $\frac{dF(x)}{dx} = f(x)$
 \section{Continuous uniform distribution}
 \par the probability of any subinterval of the range is proportional to the
-length of the interval(two sub-interv. with same length must have same
+length of the interval(two sub-interv.\ with same length must have same
 probability)
 \begin{equation}
   \begin{aligned}
@@ -402,13 +403,13 @@ process, $X~Exp(\theta)$ where $\theta = \frac{1}{\lambda}$
 \end{equation}
 \section{Normal Distribution}
 \begin{enum}
-\item range - to + infinity$
-\item denotex $X ~ N(\mu, \sigma^2)
+\item range - to + infinity
+\item denote x $X~N(\mu, \sigma^2)$
 \end{enum}
 
 \begin{equation}
-  pdf = f(x) = \frac{1}{\sqrt{2*\pi\sigma^2}}e^{-1/2(\frac{x-\mu}{\sigma})^2
-  \end{equation}
+  pdf = f(x) = \frac{1}{\sqrt{2*\pi\sigma^2}}e^{-1/2(\frac{x-\mu}{\sigma})^2}
+\end{equation}
   \par mean and variance are parameters
   \begin{enumerate}
     \item linear combination of independantly normally distributed parameters
@@ -441,64 +442,95 @@ process, $X~Exp(\theta)$ where $\theta = \frac{1}{\lambda}$
   \end{equation}
   \begin{equation}
     cdf of \frac{\Sigma_iX_i-n\mu}{\sigma\sqrt{n}} \rightarrow(0,1)
-    \end{equation}
-    \subsubsection{Average}
-    \par let $X_1, \dots, X_n$ be independant random variables, with same
-    distribution $E(X_i) = \mu$ and $Var(X_i) = \sigma^2$
-    \par as $n\rightarrow\infty$ cdf of random variable $X\bar = \Sigma_iX_i/n$
-    approaches cdf $N(\mu, \frac{\sigma^2}{n})$
-    \par cdf of randome var $\frac{X\bar - \mu}{\frac{\sigma}{\sqrt{n}}}$
-    approaches cdffor N(0,1)
-    \begin{enum}
-    \item use it when n is large but finite.
-    \item usually need n $\ge $30
-    \item works for any variables unless $\mu or \sigma^2$ do not exist
-    \end{enum}
-    \subsubsection{Continuity Correction}
-    \par improve approximation to sum or average of discrete random variables
-    using normal random variable.
-    \par go +- 0.5 for bar of width one as the integer value will be centered
-    \section{CI for $\mu$ when $\sigma $ known or n $\ge $30}
-    \textbf{point estimate} of a parameter is a specific numeric value.\\
-    \textbf{interval estimate} : interval or range of values used to estimate
-    the parameter
-    \begin{equation}
-      \bar X - z_{\alpha/2}(\frac{\sigma}{\sqrt{n}}) < \mu < \bar X +z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})
-    \end{equation}
-    point estimate +- maximum error
-    $z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
-    $z_{\alpha/2}$ critical value
-    $\alpha$ level of significance
-    \subsection{Confidence level}
-    \par probability that interval estimate will contain the parameter
-    \subsection{confidence interval}
-    \par specific interval estimate of a parameter determined by using data
-    obtained from sample and by usign specific confidence interval of
-    estimate.
-    \subsection{Sample size}
-    \par formula for minimum sample size needed for an interval estimate of
-    population mean. E is maximum error
-    \begin{equation}
-      n=(\frac{z_{\alpha/2} \cdot \sigma}{E})^2
-    \end{equation}
-    \section{CI for $\mu$ when $\sigma $ known or n < 30}
-    \begin{equation}
-      \bar X - t_{\alpha/2}(\frac{s}{\sqrt{n}}) < \mu < \bar X
-      +t_{\alpha/2}(\frac{s}{\sqrt{n}})
-    \end{equation}
-    $t_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
-    \par where s is sample standard deviation and $t_{\alpha/2}$ are found in
-    t-table for n-1 degree of freedom
-    \section{CI and sample size for proportions}
-    \begin{enumerate}
-      \item p = population proportion
-      \item \^{p} = sample proportion or $\^{p}= \frac{X}{n}$ x is # of sample
-        units wiht characteristic n sample size
-    \end{enumerate}
-    \subsection{sample size for proportions}
-    formula for minumum sample size needed for interval estimate of population
-    is
-    \begin{equation}
-      n = \^{p}\^{q}(\frac{z_{\alpha/2}}{E}) , E is maximum error forproportion
-    \end{equation}
-  \end{document}
+  \end{equation}
+  \subsubsection{Average}
+  \par let $X_1, \dots, X_n$ be independant random variables, with same
+  distribution $E(X_i) = \mu$ and $Var(X_i) = \sigma^2$
+  \par as $n\rightarrow\infty$ cdf of random variable $X\bar = \Sigma_iX_i/n$
+  approaches cdf $N(\mu, \frac{\sigma^2}{n})$
+  \par cdf of randome var $\frac{X\bar - \mu}{\frac{\sigma}{\sqrt{n}}}$
+  approaches cdffor N(0,1)
+  \begin{enum}
+  \item use it when n is large but finite.
+  \item usually need n $\ge $30
+  \item works for any variables unless $\mu or \sigma^2$ do not exist
+  \end{enum}
+  \subsubsection{Continuity Correction}
+  \par improve approximation to sum or average of discrete random variables
+  using normal random variable.
+  \par go +- 0.5 for bar of width one as the integer value will be centered
+  \section{CI for $\mu$ when $\sigma $ known or n $\ge $30}
+  \textbf{point estimate} of a parameter is a specific numeric value.\\
+  \textbf{interval estimate} : interval or range of values used to estimate
+  the parameter
+  \begin{equation}
+    \bar X - z_{\alpha/2}(\frac{\sigma}{\sqrt{n}}) < \mu < \bar X +z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})
+  \end{equation}
+  point estimate +- maximum error
+  $z_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
+  $z_{\alpha/2}$ critical value
+  $\alpha$ level of significance
+  \subsection{Confidence level}
+  \par probability that interval estimate will contain the parameter
+  \subsection{confidence interval}
+  \par specific interval estimate of a parameter determined by using data
+  obtained from sample and by usign specific confidence interval of
+  estimate.
+  \subsection{Sample size}
+  \par formula for minimum sample size needed for an interval estimate of
+  population mean. E is maximum error
+  \begin{equation}
+    n=(\frac{z_{\alpha/2} \cdot \sigma}{E})^2
+  \end{equation}
+  \section{CI for $\mu$ when $\sigma $ known or n < 30}
+  \begin{equation}
+    \bar X - t_{\alpha/2}(\frac{s}{\sqrt{n}}) < \mu < \bar X
+    +t_{\alpha/2}(\frac{s}{\sqrt{n}})
+  \end{equation}
+  $t_{\alpha/2}(\frac{\sigma}{\sqrt{n}})$  maximum error
+  \par where s is sample standard deviation and $t_{\alpha/2}$ are found in
+  t-table for n-1 degree of freedom
+  \section{CI and sample size for proportions}
+  \begin{enumerate}
+    \item p = population proportion
+    \item \^{p} = sample proportion or $\^{p}= \frac{X}{n}$ x is # of sample
+      units wiht characteristic n sample size
+  \end{enumerate}
+  \subsection{sample size for proportions}
+  formula for minumum sample size needed for interval estimate of population
+  is
+  \begin{equation}
+    n = \^{p}\^{q}(\frac{z_{\alpha/2}}{E}) , E is maximum error forproportion
+  \end{equation}
+  \section{Maximum likelihood estimator}
+  \par find derivative of the multipliction of the equatino for all
+  xi's; when multiple unknown parameters, take partial derivatives and
+  solve for unknown.
+  \section{Independant small samples}
+  \par pooled estimator
+  \begin{equation}
+    S_p^2 = \frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1+n_2-2}
+  \end{equation}
+  \begin{equation}
+    dof = n1+n2-2
+  \end{equation}
+  \section{Difference of means--Not Independant}
+  \begin{equation}
+    \begin{align}
+      d_i= x_i - y_i\\
+      \frac{\bar{D}\\mu_D}{\frac{S_D}{\sqrt{n}}}~t_{n-1}\\
+      S_D^2=\frace{\sum_{i=1}^n (D_i-\bar{D})^2}{n-1}
+    \end{align}
+  \end{equation}
+  \section{Hypthesis Testing}
+  \begin{enumerate}
+    \item Specify single default hypothesis and check whether the data is
+  unlikely under the hypothesis. Also called null hypothesis because it means
+  a new treatment has no effect.H0
+\item Alternative hypothesis. H0 is not true.
+\item Test Statistic (discrepancy measure): some funciton fo data that is
+  constructed to measure degree of agreement between the data and null
+  hypothesis.
+  \end{enumerate}
+
+\end{document}
