@@ -1,10 +1,6 @@
-\documentclass[11pt]{amsart}
-\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
-%\geometry{landscape}                % Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}
+\documentclass[11pt]{article}
 \usepackage{amssymb}
+\usepackage{amsfonts}
 \usepackage{amsmath}
 
 \title{STAT206}
@@ -198,13 +194,11 @@ time, denoted by nPr:
   = \frac{13}{28} \\
 \end{equation}
 \section{Bayes Theorem}
-\begin{equation}
-  \begin{aligned}
-    P(A \cap B) = P(A)\cdot P(B|A)\\
-    P(A|B)=\frac{P(A \cap B)}{P(B)}\\
-    P(A|B)= \frac{P(Ai*P(D|Ai))}{P(Ai)P(D|Ai)+\dots+ P(Ak)P(D|Ak)}
-  \end{aligned}
-\end{equation}
+\begin{align*}
+  P(A \cap B) = P(A)\cdot P(B|A)\\
+  P(A|B)=\frac{P(A \cap B)}{P(B)}\\
+  P(A|B)= \frac{P(Ai*P(D|Ai))}{P(Ai)P(D|Ai)+\dots+ P(Ak)P(D|Ak)}
+\end{align*}
 \section{Probability Distributions}
 \begin{enumerate}
   \item variable: characteristic  or attribute that can assume different
@@ -249,24 +243,19 @@ with small success rate
 \end{enumerate}
 \par if events occur with average rate of $\lambda$ per unit of time, and X is
 num of events which occur in t units of time, the X~Poisson($\lambda\cdot t$)
-\begin{equation *}
-
-  \begin{align}
-    f(x)  = \frac{e^{-\lambda t}(\lambda t)^x}{x!}\\
-    E(x) = \lambda t\\
-    Var(x) = \lambda t
-  \end{align}
-\end{equation *}
+\begin{align*}
+  f(x)  = \frac{e^{-\lambda t}(\lambda t)^x}{x!}\\
+  E(x) = \lambda t\\
+  Var(x) = \lambda t
+\end{align*}
 \section{Geometric Distribution}
 \par Bernoulli trials completed until successful.
 \par let X be no of independant Bernoulli trials until the first success including first success then X follow geo dist. X~Geom(p)
-\begin{equation}
-  \begin{align*}
-    f(x) = p(1-p)^{x-1}, x = 1,2,\dots\\
-    E(X) = \frac{1}{p}\\
-    Var(X) = \frac{1-p}{p^2}
-  \end{align*}
-\end{equation}
+\begin{align*}
+  f(x) = p(1-p)^{x-1}, x = 1,2,\dots\\
+  E(X) = \frac{1}{p}\\
+  Var(X) = \frac{1-p}{p^2}
+\end{align*}
 \subsection{Memoryless Property of Geometric Random Variable}
 \par let X be a Geometric(p) R.V. and t1, t2 $\in$ R. then $P(X=t1+t2\ |
 \ x=t1)=P(X>t2)$
@@ -301,21 +290,17 @@ examples
 \end{equation}
 \subsection{Example 2}
 
-\begin{equation}
-  \begin{align}
-    X~Bin(5, 1/2) ; Find P(|X-E(X)| < 2 \sigma)\\
-    E[X] = n.p = 5 \cdot 1/2 = 2.5\\
-    Var[X] = np(1-p) = 5 \cdot 1/2 1/2 = 5/4  = 1.25\\
-    P(|X-2.5| < 2\cdot \sqrt{1.25}) \ge 1-1/4 = 0.75 \\
-  \end{align}
-\end{equation}
+\begin{align*}
+  X~Bin(5, 1/2) ; Find P(|X-E(X)| < 2 \sigma)\\
+  E[X] = n.p = 5 \cdot 1/2 = 2.5\\
+  Var[X] = np(1-p) = 5 \cdot 1/2 1/2 = 5/4  = 1.25\\
+  P(|X-2.5| < 2\cdot \sqrt{1.25}) \ge 1-1/4 = 0.75 \\
+\end{align*}
 \par actual probability
-\begin{align}
-  \begin{equation}
-    P(|x-2.5|< 2\sqrt{1.25}>) = P(-2.236< x-2.5< 2.236)\\
-    P(0.264 < X <4.37) = P(1\le x\le 4)= F(4)-F(0) = 0.9688 - 0.0313 = 0.9375
-  \end{equation}
-\end{align}
+\begin{align*}
+  P(|x-2.5|< 2\sqrt{1.25}>) = P(-2.236< x-2.5< 2.236)\\
+  P(0.264 < X <4.37) = P(1\le x\le 4)= F(4)-F(0) = 0.9688 - 0.0313 = 0.9375
+\end{align*}
 \section{Continuous Random variables and distributions}
 \par function from sample space to real numbers
 \begin{equation}
@@ -323,17 +308,17 @@ examples
 \end{equation}
 \par where R(X) is continuous and individual points in R must have 0
 probability
-\begin{enum}
-\item $P(X=x) = 0 for any x \in \Re$
-\item $P(a\leq X \leq b) = P(a < X < b)$
-\end{enum}
+\begin{enumerate}
+  \item $P(X=x) = 0 for any x \in \Re$
+  \item $P(a\leq X \leq b) = P(a < X < b)$
+\end{enumerate}
 \subsection P.d.f probabiility density function
 \par for random variable X, denoted f(x), assigns probability to $x\in \Re(X)$
-\begin{enumerate}
-  \item $P(a<X<b) = \int_{a}^{b}f(x) dx, (a,b)\subseteq \Re(x)$
-  \item $f(x) \eq 0 , \forall x\in \Re(x)$
-  \item $\int_{\infty}^{\infty} f(x) dx = 1$
-\end{enumerate}
+\begin{align*}
+  P(a<X<b) &= \int_{a}^{b}{f(x)} dx, (a,b) \subseteq \Re(x) \\
+  f(x) &= 0 , \forall x \in \Re(x) \\
+  \int_{\infty}^{\infty} f(x) dx &= 1\\
+\end{align*}
 \subsection{Cumulative distribution function(cdf)}
 \par cdf of continuous random variale X, denoted F(x) gives prob that X takes
 on value less than or equal to x.
@@ -347,65 +332,52 @@ on value less than or equal to x.
   \item F(x) non decreasing
 \end{enumerate}
 \subsection{Relationship b/w pdf and cdf}
-
-\begin{equation}
-  \begin{aligned}
-    \int_{a}^{b}f(x) dx = P(a < X < b)\\
-    = P(X < b) - P(X < a)\\
-    = F(b) - F(a)
-  \end{aligned}
-\end{equation}
+\begin{align*}
+  \int_{a}^{b}f(x) dx = P(a < X < b)\\
+  = P(X < b) - P(X < a)\\
+  = F(b) - F(a)
+\end{align*}
 \par fundamental theorem of calc $\frac{dF(x)}{dx} = f(x)$
-\section{Continuous uniform distribution}
+\section{Continuous Uniform distribution}
 \par the probability of any subinterval of the range is proportional to the
 length of the interval(two sub-interv.\ with same length must have same
 probability)
-\begin{equation}
-  \begin{aligned}
-    f(X) = \frac{1}{b-a}, a\le x\le b\\
-    F(x) =
-    \begin{array}{ll}
-      0 & x < a
-      \\
-      \frac{x-a}{b-a} & a\le x \le b\\
-      1 & b < x
-    \end{array}
-  \end{aligned}
-\end{equation}
+\begin{align*}
+  f(X) = \frac{1}{b-a}, a\le x\le b\\
+  F(x) =
+  \begin{array}{ll}
+    0 & x < a
+    \\
+    \frac{x-a}{b-a} & a\le x \le b\\
+    1 & b < x
+  \end{array}
+\end{align*}
 \subsection{Mean/expected value}
-\begin{equation}
-  \begin{aligned}
-
-    $E(X)= \int_{x}xf(x)dx = \mu$\\
-    E[g(x)] = \int_{x}g(x)f(x)dx\\
-    E[aX+bY] = aE[x] +bE[y]
-  \end{aligned}
-
-\end{equation}
+\begin{align*}
+  E(X)= \int_{x}xf(x)dx = \mu\\
+  E[g(x)] = \int_{x}g(x)f(x)dx\\
+  E[aX+bY] = aE[x] +bE[y]\\
+\end{align*}
 \subsection{Variance}
-\begin{equation}
-  \begin{aligned}
-    Var(X) = E[(X-E(X))^2]\\
-    Var [aX1+bX2] = a^2Var(X1)  + b^2Var(X2)
-  \end{aligned}
-\end{equation}
+\begin{align*}
+  Var(X) = E[(X-E(X))^2]\\
+  Var [aX1+bX2] = a^2Var(X1)  + b^2Var(X2)
+\end{align*}
 \subsection{Exponential Distribution}
 \par Events occur according to a Poisson process, measure the inter arrival
 time s b/w events. If X is the amount of  time until next event in a posisson
 process, $X~Exp(\theta)$ where $\theta = \frac{1}{\lambda}$
-\begin{equation}
-  \begin{aligned}
-    f(x) = (1/\theta) e^{\-\frac{x}{\theta}}
-    F(x) = 1 - e^{-\frac{x}{\theta}}
-    E(x) = \theta
-    Var(X) = \theta^2
-  \end{aligned}
-\end{equation}
+\begin{align*}
+  f(x) = (1/\theta) e^{\-\frac{x}{\theta}}
+  F(x) = 1 - e^{-\frac{x}{\theta}}
+  E(x) = \theta
+  Var(X) = \theta^2
+\end{align*}
 \section{Normal Distribution}
-\begin{enum}
-\item range - to + infinity
-\item denote x $X~N(\mu, \sigma^2)$
-\end{enum}
+\begin{enumerate}
+  \item range - to + infinity
+  \item denote x $X~N(\mu, \sigma^2)$
+\end{enumerate}
 
 \begin{equation}
   pdf = f(x) = \frac{1}{\sqrt{2*\pi\sigma^2}}e^{-1/2(\frac{x-\mu}{\sigma})^2}
@@ -419,12 +391,10 @@ process, $X~Exp(\theta)$ where $\theta = \frac{1}{\lambda}$
     is not integrable for anyfinite limits a,b.
 
 \end{enumerate}
-\begin{equation}
-  \begin{aligned}
-    E(X) = \mu\\
-    Var(X) = \sigma^2
-  \end{aligned}
-\end{equation}
+\begin{align*}
+  E(X) = \mu\\
+  Var(X) = \sigma^2
+\end{align*}
 
 \subsection{Central Limit Theorem}
 \par use normal distrubtion to approximate probabilities for non-normal
@@ -449,12 +419,16 @@ distribution $E(X_i) = \mu$ and $Var(X_i) = \sigma^2$
 \par as $n\rightarrow\infty$ cdf of random variable $X\bar = \Sigma_iX_i/n$
 approaches cdf $N(\mu, \frac{\sigma^2}{n})$
 \par cdf of randome var $\frac{X\bar - \mu}{\frac{\sigma}{\sqrt{n}}}$
-approaches cdffor N(0,1)
-\begin{enum}
-\item use it when n is large but finite.
-\item usually need n $\ge $30
-\item works for any variables unless $\mu or \sigma^2$ do not exist
-\end{enum}
+approaches cdf for N(0,1)
+\begin{enumerate}
+  \item use it when n is large but finite.
+  \item usually need n $\ge $30
+  \item works for any variables unless $\mu or \sigma^2$ do not exist
+\end{enumerate}
+\subsubsection{Approximation to Binomial Distribution}
+\begin{equation}
+  \frac{X - n*p}{\sqrt{n*p*(1-p)}}
+\end{equation}
 \subsubsection{Continuity Correction}
 \par improve approximation to sum or average of discrete random variables
 using normal random variable.
@@ -493,35 +467,47 @@ t-table for n-1 degree of freedom
 \section{CI and sample size for proportions}
 \begin{enumerate}
   \item p = population proportion
-  \item \^{p} = sample proportion or $\^{p}= \frac{X}{n}$ x is # of sample
+  \item $\hat{p}$ = sample proportion or $\hat{p}= \frac{X}{n}$ x is \# of sample
     units wiht characteristic n sample size
 \end{enumerate}
 \subsection{sample size for proportions}
 formula for minumum sample size needed for interval estimate of population
 is
 \begin{equation}
-  n = \^{p}\^{q}(\frac{z_{\alpha/2}}{E}) , E is maximum error forproportion
+  n = \hat{p} \hat{q} (\frac{z_{\alpha/2}}{E}) , E is maximum error forproportion
 \end{equation}
 \section{Maximum likelihood estimator}
 \par find derivative of the multipliction of the equatino for all
 xi's; when multiple unknown parameters, take partial derivatives and
 solve for unknown.
+\subsection{Unbiased Estimator}
+\begin{equation}
+  E(\tilde{\theta}) = \theta
+\end{equation}
+\section{Confidence Intervals}
+\begin{equation}
+  \bar{X} - \bar{Y} \pm
+  Z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}, \sigma = S
+  for small
+\end{equation}
 \section{Independant small samples}
-\par pooled estimator
+\subsection{Pooled Estimator}
 \begin{equation}
   S_p^2 = \frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1+n_2-2}
 \end{equation}
 \begin{equation}
   dof = n1+n2-2
 \end{equation}
-\section{Difference of means--Not Independant}
+\section{Unequal variace dof}
 \begin{equation}
-  \begin{align}
-    d_i= x_i - y_i\\
-    \frac{\bar{D}\\mu_D}{\frac{S_D}{\sqrt{n}}}~t_{n-1}\\
-    S_D^2=\frace{\sum_{i=1}^n (D_i-\bar{D})^2}{n-1}
-  \end{align}
+  \frac{(\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2})^2}{\frac{\frac{S_1^2}{n_1}}{n_1-1}+\frac{\frac{S_2^2}{n_2})^2}{n_2-1}}
 \end{equation}
+\section{Difference of means--Not Independant}
+\begin{align*}
+  d_i= x_i - y_i \\
+  \frac{\bar{D} * \mu_D}{\frac{S_D}{\sqrt{n}}}~t_{n-1} \\
+  S_D^2=\frac{\sum_{i=1}^n (D_i-\bar{D})^2}{n-1}
+\end{align*}
 \section{Hypthesis Testing}
 \begin{enumerate}
   \item Specify single default hypothesis and check whether the data is
@@ -535,12 +521,54 @@ solve for unknown.
 \subsection{Types of Error}
 \par TYPE 1 ERROR: reject H0 when it is true.
 \par TYPE 2 ERROR: do not reject H0 when it is false.
-\subsection{Notation}
+\begin{align*}
+  P(Type 1 Error) = \alpha (significance level)\\
+  P(Type 2 Error) = 1 - \beta (P is the power of the test)
+\end{align*}
+\subsection{Steps}
+\begin{enumerate}
+  \item Step 1: Determine null and alternative hypothesis.
+  \item Step 2: Choose a test statistic. $T= T(X_1\dots X_n;\theta)$.
+  \item Step 3: Find observed value of T. $T_{obs}= T(x_1,\dots x_n;\theta)$.
+  \item Step 4: Critical value or p-value. If critical value, find critical
+    value for level of significance, and take into account if its two sided or
+    not. For pvalue determine error amount for the observed value.
+  \item Step 5: Compare crtical or pvalue with hypothesis and reject if
+    necessary.
+\end{enumerate}
+
+\subsection{Hypothesis test for mean}
 \begin{equation}
-  \begin{align}
-    P(Type 1 Error) = \alpha (significance level)\\
-    P(Type 2 Error) = 1 - \beta (P is the power of the test)
-  \end{align}
+  Z = \frac{\bar{X}- \mu_0}{\frac{\sigma}{n}}
 \end{equation}
+\subsection{P-Value approach}
+\par once find test statistic, find probability greater than.
+\subsection{Population proportion}
+\begin{equation}
+  Z_{obs} = \frac{\hat{p} - p}{\sqrt{\frac{p*(1-p)}{n}}}
+\end{equation}
+\begin{equation}
+  \hat{p} = \frac{X}{n}
+\end{equation}
+\section{Chi Squared}
+\begin{equation}
+  S^2=\frac{\sum_{i=1}^n (X_i-\bar{X})^2}{n-1}
+\end{equation}
+\begin{equation}
+  U = \frac{(n-1)S^2}{\sigma^2}, n-1 dof
+\end{equation}
+\begin{equation}
+  (\frac{(n-1)s^2}{\chi_{\alpha/2}^2},\frac{(n-1)s^2}{\chi_{1-\alpha/2}^2}
+\end{equation}
+\section{Tests about Independance}
+\subsection{Pearson's Test}
+\begin{equation}
+  D  = \sum_{j=1}^m\frac{(O_j - E_j)^2}{E_j}
+\end{equation}
+\par where O is observed and E is expected. For a large n, D has an approximate
+chi squared distribution.
+\par with r x c table, (a-1)(b-1) degrees of freedom, a num rows, b num of columns
+\section{Goodness of Fit Test}
+\par Try to fit distribution to given data, use pearson's test statistic.
 
 \end{document}
