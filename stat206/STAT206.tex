@@ -570,5 +570,26 @@ chi squared distribution.
 \par with r x c table, (a-1)(b-1) degrees of freedom, a num rows, b num of columns
 \section{Goodness of Fit Test}
 \par Try to fit distribution to given data, use pearson's test statistic.
-
+\section{Regression}
+\begin{enumerate}
+  \item Statistically Dependant
+  \item independant
+\end{enumerate}
+\subsection{Definitions}
+\begin{enumerate}
+  \item $\rho$ population's correlation coefficient
+  \item e- sample correlation coefficient
+\end{enumerate}
+\begin{align*}
+  \rho &= \frac{cov(x,y)}{\sigma_x\sigma_y}\\
+  cov(x,y) &= E[X-E(X)][Y-E(Y)]\\
+  cov(x,x) &= E[X-E(X)]^2\\
+  -1\le p \le 1
+\end{align*}
+\begin{enumerate}
+  \item p => +1 strong positive correlation
+  \item p => -1 strong negative correlation
+  \item p => 0 weak correlation
+  \item p == 0 no correlation
+\end{enumerate}
 \end{document}
