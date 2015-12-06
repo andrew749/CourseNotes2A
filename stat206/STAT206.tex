@@ -595,5 +595,24 @@ chi squared distribution.
 \begin{equation}
   t_{cal} = r \sqrt{\frac{n-2}{1-r^2}}, n-2
 \end{equation}
+\begin{align*}
+  S_{xx}= \sum_{i=1}^n(x_i-\bar{x})^2  =
+  \sum_{i=1}^nx_i^2-\frac{(\sum_{i=1}^nx_i)^2}{n}\\
+  S_{yy}= \sum_{i=1}^n(y_i-\bar{y})^2  =
+  \sum_{i=1}^ny_i^2-\frac{(\sum_{i=1}^ny_i)^2}{n}\\
+  S_{xy} = \sum_{i=1}^n (x_i=\bar{x})(y_i-\bar{y}) =
+  \sum_{i=1}^nx_iy_i-\frac{(\sum_{i=1}^nx_i)(\sum_{i=1}^ny_i)}{n}\\
+  b = \frac{S_{xy}}{S_{xx}}\\
+  \bar{y} = b\bar{x}+a\\
+  s_e^2=\frac{S_{yy}-(S_{xy})^2/S_{xx}}{n-2}\\
+  t = \frac{b-\beta}{\frac{s_e}{\sqrt{S_{xx}}}}\\
+  b\pm t_{\alpha/2}*s_e/\sqrt{S_{xx}}
+\end{align*}
+\section{Correlation}
+\begin{align*}
+  r =
+  \frac{1}{n-1}\sum_{i=1}^n(\frac{x_i-\bar{x}}{s_x})(\frac{y_i-\bar{y}}{s_y})\\
+  r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}
+\end{align*}
 
 \end{document}
