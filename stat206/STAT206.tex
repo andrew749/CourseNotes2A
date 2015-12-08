@@ -184,7 +184,7 @@ time, denoted by nPr:
 \par Combination: selection of objects with no order
 \par the selection of r objects out of n objects can be done in $nC_r$ ways
 \begin{equation}
-  \binom(n, r) = \frac{n!}{(n-r)!r!}
+  \binom{n}{r} = \frac{n!}{(n-r)!r!}
 \end{equation}
 \section{Combinatorics Ex}
 \begin{equation}
@@ -195,9 +195,9 @@ time, denoted by nPr:
 \end{equation}
 \section{Bayes Theorem}
 \begin{align*}
-  P(A \cap B) = P(A)\cdot P(B|A)\\
-  P(A|B)=\frac{P(A \cap B)}{P(B)}\\
-  P(A|B)= \frac{P(Ai*P(D|Ai))}{P(Ai)P(D|Ai)+\dots+ P(Ak)P(D|Ak)}
+  P(A \cap B) &= P(A)\cdot P(B|A)\\
+  P(A|B)&=\frac{P(A \cap B)}{P(B)}\\
+  P(A|B)&= \frac{P(Ai*P(D|Ai))}{P(Ai)P(D|Ai)+\dots+ P(Ak)P(D|Ak)}
 \end{align*}
 \section{Probability Distributions}
 \begin{enumerate}
@@ -216,11 +216,11 @@ time, denoted by nPr:
   \item outcomes independant of each other
   \item probability of success must remain same for each trial
 \end{enumerate}
-\begin{align*}
-  Mean: \mu = \sum (X \cdot P(X))\\
-  Variance: \sigma^2 = \sum[X^2\cdot P(X)] -\mu^2\\
-  Standard Deviation: \sigma = \sqrt{\sigma^2}\\
-  Expectation: E(X) = \mu = \sum (X \cdot P(X))\\
+\begin{align*}{2}
+  Mean&: \mu &= \sum (X \cdot P(X))\\
+  Variance&: \sigma^2 &= \sum[X^2\cdot P(X)] -\mu^2\\
+  Standard Deviation&: \sigma &= \sqrt{\sigma^2}\\
+  Expectation&: E(X) &= \mu = \sum (X \cdot P(X))\\
 \end{align*}
 \section{Poisson distribution}
 \par discrete probability distribution that is useful in large numbe of trials
@@ -244,17 +244,17 @@ with small success rate
 \par if events occur with average rate of $\lambda$ per unit of time, and X is
 num of events which occur in t units of time, the X~Poisson($\lambda\cdot t$)
 \begin{align*}
-  f(x)  = \frac{e^{-\lambda t}(\lambda t)^x}{x!}\\
-  E(x) = \lambda t\\
-  Var(x) = \lambda t
+  f(x)  &= \frac{e^{-\lambda t}(\lambda t)^x}{x!}\\
+  E(x) &= \lambda t\\
+  Var(x) &= \lambda t
 \end{align*}
 \section{Geometric Distribution}
 \par Bernoulli trials completed until successful.
 \par let X be no of independant Bernoulli trials until the first success including first success then X follow geo dist. X~Geom(p)
 \begin{align*}
-  f(x) = p(1-p)^{x-1}, x = 1,2,\dots\\
-  E(X) = \frac{1}{p}\\
-  Var(X) = \frac{1-p}{p^2}
+  f(x) &= p(1-p)^{x-1}, x = 1,2,\dots\\
+  E(X) &= \frac{1}{p}\\
+  Var(X) &= \frac{1-p}{p^2}
 \end{align*}
 \subsection{Memoryless Property of Geometric Random Variable}
 \par let X be a Geometric(p) R.V. and t1, t2 $\in$ R. then $P(X=t1+t2\ |
@@ -309,10 +309,10 @@ examples
 \par where R(X) is continuous and individual points in R must have 0
 probability
 \begin{enumerate}
-  \item $P(X=x) = 0 for any x \in \Re$
+  \item $P(X=x) = 0 \forall x \in \Re$
   \item $P(a\leq X \leq b) = P(a < X < b)$
 \end{enumerate}
-\subsection P.d.f probabiility density function
+\subsection{Pdf probability density function}
 \par for random variable X, denoted f(x), assigns probability to $x\in \Re(X)$
 \begin{align*}
   P(a<X<b) &= \int_{a}^{b}{f(x)} dx, (a,b) \subseteq \Re(x) \\
